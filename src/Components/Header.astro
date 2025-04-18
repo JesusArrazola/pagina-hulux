@@ -41,10 +41,16 @@ import SubMenu from "./SubMenu.astro";
     //Botón menú
     const buttons = document.getElementsByClassName("menubutton");
     const menu = document.getElementById("mobileMenu");
+
+    function toggleMenu() {
+        menu?.classList.toggle("translate-x-full");
+        menu?.classList.toggle("translate-x-0");
+        menu?.classList.toggle("pointer-events-none");
+    }
+
     for (const button of buttons) {
         button.addEventListener("click",()=>{
-            menu?.classList.remove("notshow");
-            menu?.classList.add("show");
+            toggleMenu();
         });
     }
 </script>
