@@ -1,8 +1,10 @@
 ---
+import Header from '../Components/Header.astro'
+import Layout from '../Layouts/Layout.astro'
 import './src/styles/global.css'
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,6 +13,10 @@ import './src/styles/global.css'
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1 class="text-primary">Astro</h1>
+		<Layout>
+			<Header></Header>
+			<Header></Header>
+			<Header></Header>
+		</Layout>
 	</body>
 </html>
