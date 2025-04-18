@@ -1,14 +1,22 @@
-<header class="flex items-center justify-between border border-red-600">
-    <p>
-        HULUX LOGO
-    </p>
+---
+import Image from "astro/components/Image.astro"
+import img from "../assets/logo_naranja.png";
+import MenuIcon from "../assets/menu.svg";
+import MenuIconSmall from "../assets/menuSmall.svg";
+---
 
-    <nav>
-        <ul class="flex items-center justify-around gap-4"> 
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contáctanos</a></li>
-        </ul>
+<header class="p-9 xl:p-16 bg-secondary flex items-center justify-between">
+    <div class="w-26 h-6 sm:w-38 sm:h-9 xl:w-44 xl:h-11">
+        <Image src={img} alt={"Logo de Hulux Telecomunicaciones"}></Image>
+    </div>
+    <nav class="hidden xl:flex gap-5 text-white text-lg items-center">
+        <a class="py-2 px-5 rounded-2xl bg-primary" href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contáctanos</a>
+        <a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#">Contratar</a>
     </nav>
+    
+    <MenuIcon class={"hidden sm:block xl:hidden"} />
+    <MenuIconSmall class={"block sm:hidden"} />
 </header>
