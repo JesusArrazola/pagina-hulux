@@ -2,12 +2,12 @@
 import Logo from "./Logo.astro";
 import CloseIcon from "../assets/icons/close.svg"
 ---
-<nav id="mobileMenu" class="w-2/3 h-screen bg-secondary fixed top-0 right-0 notshow">
+<nav id="mobileMenu" class="transition-transform duration-300 ease-in-out translate-x-full pointer-events-none  w-2/3 sm:w-1/3 h-screen bg-secondary fixed top-0 right-0">
     <div class="flex flex-col items-center justify-between">
-        <div class="flex w-full flex-row-reverse p-4" id="closeIcon">
-            <CloseIcon class="text-tertiary" />
+        <div class="flex w-full flex-row-reverse p-8" id="closeIcon">
+            <CloseIcon class="text-tertiary cursor-pointer" />
         </div>
-        <div class="mb-8">
+        <div class="mb-12">
             <Logo />
         </div>
         <ul class="text-white text-center text-lg flex flex-col gap-5">
@@ -29,11 +29,17 @@ import CloseIcon from "../assets/icons/close.svg"
 </style>
 <script>
     //Ocultar menu
+    
     const closeIcon = document.getElementById("closeIcon");
     const menu = document.getElementById("mobileMenu");
 
+    function toggleMenu() {
+        menu?.classList.toggle("translate-x-full");
+        menu?.classList.toggle("translate-x-0");
+        menu?.classList.toggle("pointer-events-none");
+    }
+
     closeIcon?.addEventListener("click",()=>{
-        menu?.classList.remove("show");
-        menu?.classList.add("notshow");
+        toggleMenu();
     });
 </script>
