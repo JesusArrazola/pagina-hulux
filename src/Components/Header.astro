@@ -27,14 +27,14 @@ import MenuIconSmall from "../assets/menuSmall.svg";
 </style>
 <script>
     const header = document.getElementsByTagName("header")[0];
-    if(scrollY > 200) header.classList.remove("bg-solid");
-    else header.classList.add("bg-solid");
+    if(scrollY > 200) header.classList.add("bg-solid");
+    else header.classList.remove("bg-solid");
     
     window.addEventListener("scroll", ()=>{
         if(scrollY > 200){
-            header.classList.remove("bg-solid");
-        }else{
             header.classList.add("bg-solid");
+        }else{
+            header.classList.remove("bg-solid");
         }
     });
 </script>
