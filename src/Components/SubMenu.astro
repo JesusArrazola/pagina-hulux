@@ -1,0 +1,39 @@
+---
+import Logo from "./Logo.astro";
+import CloseIcon from "../assets/icons/close.svg"
+---
+<nav id="mobileMenu" class="w-2/3 h-screen bg-secondary fixed top-0 right-0 notshow">
+    <div class="flex flex-col items-center justify-between">
+        <div class="flex w-full flex-row-reverse p-4" id="closeIcon">
+            <CloseIcon class="text-tertiary" />
+        </div>
+        <div class="mb-8">
+            <Logo />
+        </div>
+        <ul class="text-white text-center text-lg flex flex-col gap-5">
+            <li><a class="py-2 px-5 rounded-2xl bg-primary"  href="#" role="button">Inicio</a></li>
+            <li><a href="#" role="button">Servicios</a></li>
+            <li><a href="#" role="button">Nosotros</a></li>
+            <li><a href="#" role="button">Contacto</a></li>
+            <li><a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#" role="button">Contratar</a></li>
+        </ul>
+    </div>
+</nav>
+<style>
+    .show{
+        display: block;
+    }
+    .notshow{
+        display: none;
+    }
+</style>
+<script>
+    //Ocultar menu
+    const closeIcon = document.getElementById("closeIcon");
+    const menu = document.getElementById("mobileMenu");
+
+    closeIcon?.addEventListener("click",()=>{
+        menu?.classList.remove("show");
+        menu?.classList.add("notshow");
+    });
+</script>

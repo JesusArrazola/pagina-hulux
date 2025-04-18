@@ -1,14 +1,13 @@
 ---
-import Image from "astro/components/Image.astro"
-import img from "../assets/logo_naranja.png";
 import MenuIcon from "../assets/menu.svg";
 import MenuIconSmall from "../assets/menuSmall.svg";
+import Logo from "./Logo.astro";
+import SubMenu from "./SubMenu.astro";
 ---
 
 <header class="p-9 xl:p-16 flex items-center justify-between fixed w-full top-0 transition-colors">
-    <div class="w-26 h-6 sm:w-38 sm:h-9 xl:w-44 xl:h-11">
-        <Image src={img} alt={"Logo de Hulux Telecomunicaciones"}></Image>
-    </div>
+    <Logo/>
+
     <nav class="hidden xl:flex gap-5 text-white text-lg items-center">
         <a class="py-2 px-5 rounded-2xl bg-primary" href="#">Inicio</a>
         <a href="#">Nosotros</a>
@@ -17,8 +16,8 @@ import MenuIconSmall from "../assets/menuSmall.svg";
         <a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#">Contratar</a>
     </nav>
     
-    <MenuIcon class={"hidden sm:block xl:hidden"} />
-    <MenuIconSmall class={"block sm:hidden"} />
+    <MenuIcon class={"hidden sm:block xl:hidden menubutton"}/>
+    <MenuIconSmall class={"block sm:hidden menubutton"} />
 </header>
 <style>
     .bg-solid{
@@ -26,6 +25,7 @@ import MenuIconSmall from "../assets/menuSmall.svg";
     }
 </style>
 <script>
+    //Cambio de color en el header al hacer scroll
     const header = document.getElementsByTagName("header")[0];
     if(scrollY > 200) header.classList.add("bg-solid");
     else header.classList.remove("bg-solid");
@@ -37,4 +37,14 @@ import MenuIconSmall from "../assets/menuSmall.svg";
             header.classList.remove("bg-solid");
         }
     });
+
+    //Botón menú
+    const buttons = document.getElementsByClassName("menubutton");
+    const menu = document.getElementById("mobileMenu");
+    for (const button of buttons) {
+        button.addEventListener("click",()=>{
+            menu?.classList.remove("notshow");
+            menu?.classList.add("show");
+        });
+    }
 </script>
