@@ -1,20 +1,10 @@
 ---
 import Layout from "../Layouts/Layout.astro"
-import Image from "astro/components/Image.astro"
-import img from "../assets/whatsappIcon.svg";
 import Contenedor from "../Components/contenedor.astro";
 import SubMenu from "../Components/SubMenu.astro";
 ---
 
 <Layout>
 	<Contenedor />
-
 	<SubMenu />
-
-	<!-- Botón de whatsapp -->
-	<div class="bg-green-600 fixed bottom-0 right-0 m-4 rounded-full p-2">
-		<a href="#" role="button">
-			<Image src={img} alt={"WhatssApp chat Icon"}/>
-		</a>
-	</div>
 </Layout>
