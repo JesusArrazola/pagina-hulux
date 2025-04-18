@@ -1,9 +1,16 @@
 ---
 import Layout from "../Layouts/Layout.astro"
+import Image from "astro/components/Image.astro"
+import img from "../assets/whatsappIcon.svg";
 ---
 
 <Layout>
 	<div class="h-[1200px] bg-pink-300">
-		
+
+	</div>
+	<div class="bg-green-600 fixed bottom-0 right-0 m-4 rounded-full p-2">
+		<a href="#" role="button">
+			<Image src={img} alt={"WhatssApp chat Icon"}/>
+		</a>
 	</div>
 </Layout>
