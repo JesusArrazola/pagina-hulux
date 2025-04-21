@@ -13,10 +13,19 @@
 
     .hero {
       background: url('../assets/Purple-and-Pink-Pastel-Simple-Modern-Payment-Mobile-App-Presentation-1.gif') no-repeat center center/cover;
-      height: 85vh;
+      height: 90vh;
       display: flex;
       align-items: center;
       padding: 0 5%;
+      background-attachment: fixed; /* ✅ Fondo estático */
+    }
+
+    .fondo {
+      background: url('../assets/Hulux_(1).gif') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 30%;
       background-attachment: fixed; /* ✅ Fondo estático */
     }
 
@@ -69,22 +78,23 @@
 
     /* ✅ Sección azul */
     .info-section {
-      background-color: #11293e; /* Azul oscuro */
+      /*background-color: #11293e; /* Azul oscuro */
       color: white;
-      padding: 60px 20px;
+      padding: 60px 10px;
       text-align: center;
     }
 
     .info-section h2 {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.2;
       margin-bottom: 1rem;
+
     }
 
     .info-section p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     /* Responsive */
@@ -138,10 +148,12 @@
   </div>
 
   <!-- Nueva sección de información -->
+   <div class="fondo">
   <div class="info-section">
     <h2>Líderes en telecomunicaciones de alta calidad y tecnología</h2>
     <p>En Hulux, somos líderes en telecomunicaciones de alta calidad y tecnología avanzada, con más de 12 años de experiencia en el mercado. Nos destacamos por ofrecer servicios de internet confiables y veloces, adaptados a las necesidades de hogares, negocios e instituciones.</p>
     <br>
     <a href="#" class="btn1">Leer más</a>
   </div>
+</div>
   
