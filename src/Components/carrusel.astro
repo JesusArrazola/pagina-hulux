@@ -17,18 +17,31 @@
   scroll-behavior: smooth;
 }
 
-.carrusel-contenedor:hover .carrusel-auto {
-  animation-play-state: paused;
-}
+
 
 .slide {
   flex: 0 0 auto;
-  width: 550px;
-  height: 100%;
+  width: 120vw; /* MUCHO más ancho que el viewport */
+  max-width: 600px;
+  height: 240px;
   position: relative;
   scroll-snap-align: start;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .slide {
+    width: 380px;
+    height: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    width: 420px;
+    height: 300px;
+  }
 }
 
 .slide img {
@@ -52,7 +65,7 @@
 /* Texto centrado y responsivo */
 .texto-superpuesto {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -62,14 +75,25 @@
   z-index: 2;
   pointer-events: none;
   padding: 0 1rem;
+  max-width: 90%;
 }
 
-/* Animación automática */
 @keyframes scrollCarrusel {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* desplaza la mitad del contenido duplicado */
+  100% { transform: translateX(-30%); } /* Ya no es -50%, ahora avanza más */
 }
 
+@media (min-width: 768px) {
+  .slide {
+    width: 300px;
+    height: 250px;
+  }
+
+  .texto-superpuesto {
+    font-size: 2rem;
+  }
+
+  }
 
 
 </style>
