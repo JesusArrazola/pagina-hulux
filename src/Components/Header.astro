@@ -6,8 +6,9 @@ import Logo from "./Logo.astro";
 const path = Astro.url.pathname;
 ---
 
-<header class="p-9 xl:p-16 flex items-center justify-between fixed w-full top-0 transition-colors">
-    <Logo/>
+<header class="z-20 p-9 xl:p-16 flex items-center justify-between fixed w-full top-0 transition-colors">
+
+     <Logo classList={"transition-opacity duration-200"}/>
 
     <nav class="hidden xl:flex gap-5 text-white text-lg items-center">
         <a class:list={["py-2 px-5 rounded-2xl", path === "/" && "bg-primary"]} href="/">Inicio</a>
@@ -17,13 +18,42 @@ const path = Astro.url.pathname;
         <a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#">Contratar</a>
     </nav>
     
-    <MenuIcon class={"hidden sm:block xl:hidden menubutton"}/>
-    <MenuIconSmall class={"block sm:hidden menubutton"} />
+    <div class="menu-toggle block xl:hidden" id="button" >
+        <svg viewBox="0 0 100 100" width="32" height="32">
+          <rect class="line top" width="80" height="10" x="10" y="25" rx="2" />
+          <rect class="line middle" width="80" height="10" x="10" y="45" rx="2" />
+          <rect class="line bottom" width="80" height="10" x="10" y="65" rx="2" />
+        </svg>
+      </div>
 </header>
 <style>
     .bg-solid{
         background-color: var(--color-secondary);
     }
+    .menu-toggle {
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .line {
+        fill: var(--color-tertiary);
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    /* ANIMACIÓN AL ABRIR */
+    .menu-toggle.open .top {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .menu-toggle.open .middle {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bottom {
+        transform: rotate(-45deg) translate(10px, -10px);
+    }
+
 </style>
 <script>
     //Cambio de color en el header al hacer scroll
@@ -40,18 +70,17 @@ const path = Astro.url.pathname;
     });
 
     //Botón menú
-    const buttons = document.getElementsByClassName("menubutton");
+    const button = document.getElementById("button");
     const menu = document.getElementById("mobileMenu");
+    const logo = document.getElementById("logo");
 
     function toggleMenu() {
+        button?.classList.toggle("open");
         menu?.classList.toggle("translate-x-full");
         menu?.classList.toggle("translate-x-0");
         menu?.classList.toggle("pointer-events-none");
+        logo?.classList.toggle("opacity-0");
     }
 
-    for (const button of buttons) {
-        button.addEventListener("click",()=>{
-            toggleMenu();
-        });
-    }
+    button?.addEventListener("click", toggleMenu);
 </script>

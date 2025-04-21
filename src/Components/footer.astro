@@ -10,26 +10,26 @@ import Phone from "../assets/icons/phone.svg"
 import WhatsAppIcon from "../assets/icons/whatsappIcon.svg"
 ---
 
-<footer class="flex flex-col items-start justify-start gap-24 py-16 px-6 sm:px-16 bg-secondary">
+<footer class="flex flex-col items-start justify-start gap-24 p-9 xl:p-16 px-6 sm:px-16 bg-secondary">
     <Logo/>
 
     <section class="flex flex-col gap-16 sm:gap-32 lg:gap-48 sm:flex-row">
         
         <div class="flex flex-col gap-8">
-            <p class="text-white text-xl">Acerca de Hulux</p>
+            <p class="text-white text-xl">Acerca de Hulux &reg;</p>
             <ul class="text-secondary-text flex flex-col gap-5">
-                <li>¿Quiénes somos?</li>
-                <li>Portal del cliente</li>
-                <li>Legal</li>
+                <li class="hover:underline"><a href="#">¿Quiénes somos?</a></li>
+                <li class="hover:underline"><a href="#">Portal del cliente</a></li>
+                <li class="hover:underline"><a href="#">Legal</a></li>
             </ul>
         </div>
 
         <div class="flex flex-col gap-8">
             <p class="text-white text-xl">Ayuda</p>
             <ul class="text-secondary-text flex flex-col gap-5">
-                <li>Sucursales</li>
-                <li>Preguntas frecuentes</li>
-                <li>Test de velocidad</li>
+                <li class="hover:underline"><a href="#">Sucursales</a></li>
+                <li class="hover:underline"><a href="#">Preguntas frecuentes</a></li>
+                <li class="hover:underline"><a href="#">Test de velocidad</a></li>
             </ul>
         </div>
 
@@ -37,32 +37,41 @@ import WhatsAppIcon from "../assets/icons/whatsappIcon.svg"
             <p class="text-white text-xl">Contáctanos</p>
             <ul class="text-secondary-text flex flex-col gap-5">
                 <li>
-                    <div class=" flex gap-2 items-center">
-                        <Envelope class={"text-secondary-text"}/>
-                        <p>hola@hulux.mx</p>
-                    </div>
+                    <a href="mailto:hola@hulux.mx">
+                        <div class=" flex gap-2 items-center hover:underline">
+                            <Envelope class={"text-secondary-text"}/>
+                            hola@hulux.mx
+                        </div>
+                    </a>
                 </li>
 
                 <li>
-                    <div class=" flex gap-2 items-center">
-                        <WhatsAppIcon class={"text-secondary-text"}/>
-                        <p>(772) 150-7013</p>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class=" flex gap-2 items-center">
-                        <WhatsAppIcon class={"text-secondary-text"}/>
-                        <p>(772) 727-7403</p>
-                    </div>
+                    <a href="https://api.whatsapp.com/send/?phone=7721507013">
+                        <div class=" flex gap-2 items-center hover:underline">
+                            <WhatsAppIcon class={"text-secondary-text"}/>
+                            (772) 150-7013
+                        </div>
+                    </a>
                 </li>
 
                 <li>
-                    <div class=" flex gap-2 items-center">
-                        <Phone class={"text-secondary-text"}/>
-                        <p>(772) 168-0002</p>
-                    </div>
+                    <a href="https://api.whatsapp.com/send/?phone=7727273403">
+                        <div class=" flex gap-2 items-center hover:underline">
+                            <WhatsAppIcon class={"text-secondary-text"}/>
+                            (772) 727-3403
+                        </div>
+                    </a>
                 </li>
+
+                <li>
+                    <a href="tel:+527721680002">
+                        <div class=" flex gap-2 items-center hover:underline">
+                            <Phone class={"text-secondary-text"}/>
+                            (772) 168-0002
+                        </div>
+                    </a>
+                </li>
+
             </ul>
         </div>
 
