@@ -2,17 +2,18 @@
 import MenuIcon from "../assets/menu.svg";
 import MenuIconSmall from "../assets/menuSmall.svg";
 import Logo from "./Logo.astro";
-import SubMenu from "./SubMenu.astro";
+
+const path = Astro.url.pathname;
 ---
 
 <header class="p-9 xl:p-16 flex items-center justify-between fixed w-full top-0 transition-colors">
     <Logo/>
 
     <nav class="hidden xl:flex gap-5 text-white text-lg items-center">
-        <a class="py-2 px-5 rounded-2xl bg-primary" href="#">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="/servicios">Servicios</a>
-        <a href="#">Contáctanos</a>
+        <a class:list={["py-2 px-5 rounded-2xl", path === "/" && "bg-primary"]} href="/">Inicio</a>
+        <a class:list={["py-2 px-5 rounded-2xl", path === "/nosotros" && "bg-primary"]} href="/nosotros">Nosotros</a>
+        <a class:list={["py-2 px-5 rounded-2xl", path === "/servicios" && "bg-primary"]} href="/servicios">Servicios</a>
+        <a class:list={["py-2 px-5 rounded-2xl", path === "/contactanos" && "bg-primary"]} href="/contactanos">Contáctanos</a>
         <a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#">Contratar</a>
     </nav>
     
