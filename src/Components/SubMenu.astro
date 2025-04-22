@@ -10,11 +10,11 @@ const path = Astro.url.pathname;
             <Logo />
         </div>
         <nav class="text-white text-center text-lg flex flex-col gap-5">
-            <a class:list={["py-2 px-5 rounded-2xl", path === "/" && "bg-primary"]} href="/">Inicio</a>
-        <a class:list={["py-2 px-5 rounded-2xl", path === "/nosotros" && "bg-primary"]} href="/nosotros">Nosotros</a>
-        <a class:list={["py-2 px-5 rounded-2xl", path === "/servicios" && "bg-primary"]} href="/servicios">Servicios</a>
-        <a class:list={["py-2 px-5 rounded-2xl", path === "/contactanos" && "bg-primary"]} href="/contactanos">Contáctanos</a>
-        <a class="py-2 px-5 rounded-2xl bg-tertiary text-secondary" href="#">Contratar</a>
+            <a class:list={[" py-2 px-5 ", path === "/" && "border-b-2 border-b-primary"]} href="/">Inicio</a>
+            <a class:list={[" py-2 px-5 ", path === "/nosotros" && "border-b-2 border-b-primary"]} href="/nosotros">Nosotros</a>
+            <a class:list={[" py-2 px-5 ", path === "/servicios" && "border-b-2 border-b-primary"]} href="/servicios">Servicios</a>
+            <a class:list={[" py-2 px-5 ", path === "/contactanos" && "border-b-2 border-b-primary"]} href="/contactanos">Contáctanos</a>
+            <a class="py-2 px-5 rounded-sm bg-tertiary hover:bg-secondary text-secondary hover:text-tertiary" href="#">Contratar</a>
         </nav>
     </div>
 </nav>

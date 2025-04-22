@@ -1,9 +1,12 @@
 ---
+import Logo from './Logo.astro';
+
 interface Props {
     titulo: string;
     imagenes: ImageMetadata[];
+    logo?: boolean
 }
-const {titulo, imagenes} = Astro.props;
+const {titulo, imagenes, logo=false} = Astro.props;
 ---
 
     <div class="carrusel-contenedor">
@@ -21,7 +24,10 @@ const {titulo, imagenes} = Astro.props;
             </div>
             ))}
     </div>
-    <div class="texto-superpuesto">{titulo}</div>
+    <div class:list={[logo && "flex flex-col items-center justify-center gap-4","texto-superpuesto"]}>
+      {logo && <Logo />}
+      {titulo}
+    </div>
     </div>
 
   <style>
@@ -101,7 +107,6 @@ const {titulo, imagenes} = Astro.props;
   z-index: 2;
   pointer-events: none;
   padding: 0 1rem;
-  max-width: 90%;
 }
 
 @keyframes scrollCarrusel {
