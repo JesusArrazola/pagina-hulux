@@ -6,7 +6,7 @@ import Logo from "./Logo.astro";
 const path = Astro.url.pathname;
 ---
 
-<header class="z-20 p-9 xl:p-16 flex items-center justify-between fixed w-full top-0 transition-colors">
+<header class="z-20 py-9 xl:py-16 px-6 sm:px-9 lg:px-16 flex items-center justify-between fixed w-full top-0 transition-colors">
 
      <Logo classList={"transition-opacity duration-200"}/>
 
@@ -58,11 +58,12 @@ const path = Astro.url.pathname;
 <script>
     //Cambio de color en el header al hacer scroll
     const header = document.getElementsByTagName("header")[0];
-    if(scrollY > 200) header.classList.add("bg-solid");
+    const scrollDistance = 80;
+    if(scrollY > scrollDistance) header.classList.add("bg-solid");
     else header.classList.remove("bg-solid");
     
     window.addEventListener("scroll", ()=>{
-        if(scrollY > 200){
+        if(scrollY > scrollDistance){
             header.classList.add("bg-solid");
         }else{
             header.classList.remove("bg-solid");
