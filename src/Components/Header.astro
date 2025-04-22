@@ -60,7 +60,9 @@ const path = Astro.url.pathname;
     //Cambio de color en el header al hacer scroll
     const header = document.getElementsByTagName("header")[0];
     const scrollDistance = 80;
-    if(scrollY > scrollDistance) header.classList.add("bg-solid");
+    if(scrollY > scrollDistance){
+        header.classList.add("bg-solid");
+    }
     else header.classList.remove("bg-solid");
     
     window.addEventListener("scroll", ()=>{
