@@ -1,0 +1,21 @@
+---
+
+interface Props {
+  center: boolean;
+  bgImage: ImageMetadata;
+  title: string;
+  subtitle: string;
+}
+
+let { center, bgImage, title, subtitle } = Astro.props;
+center = false;
+const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
+---
+  
+  <!-- Hero con imagen de fondo -->
+  <div class:list={["bg-no-repeat bg-center bg-cover h-[50vh] lg:h-[85vh] relative text-white", !center && "px-6 sm:px-9 lg:px-16"]} style={`background-image: url(${bgImage.src})`} >
+    <div class:list={[`flex flex-col justify-center w-full relative top-[${mobileTopMargin}px] sm:top-[222px] lg:top-[311px]`, center && "items-center"]}>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">{title}</h1>
+      <p class:list={["sm:text-xl lg:text-3xl font-bold max-w-2/3 lg:max-w-1/2",center && "text-center"]}>{subtitle}</p>
+    </div>
+  </div>
