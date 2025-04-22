@@ -1,20 +1,26 @@
 ---
 import Layout from "../Layouts/Layout.astro"
-import Image from "astro/components/Image.astro"
-import img from "../assets/whatsappIcon.svg";
-import SubMenu from "../Components/SubMenu.astro";
-import ServiciosHulux from "../Components/ServiciosHulux.astro";
+import imgHero from "../assets/Mother-Helping-her-Daughter-with-her-Homework-2.png";
+import Hero from "../Components/Hero.astro";
+import CasrruselComponent from "../Components/CasrruselComponent.astro";
+
+//Imagenes
+import img1 from "../assets/Entretenimiento_hulux.png";
+import img2 from "../assets/Estudiando_con_hulux.png";
+import img3 from "../assets/Trabajando_con_hulux.png";
+import img4 from "../assets/Carr_2.4.png";
 ---
 
 <Layout>
-	<ServiciosHulux />
-
-
-	<SubMenu />
-	<!-- Botón de whatsapp -->
-	<div class="bg-green-600 fixed bottom-0 right-0 m-4 rounded-full p-2">
-		<a href="#" role="button">
-			<Image src={img} alt={"WhatssApp chat Icon"}/>
-		</a>
-	</div>
+	<Hero
+		bgImage={imgHero}
+		title="Nuestros servicios"
+		subtitle="Ofrecemos paquetes de internet diseñados para satisfacer todas tus necesidades de conectividad, con la confiabilidad y velocidad que mereces."
+	/>
+	
+	<CasrruselComponent
+		titulo="Tenemos un plan perfecto para tí"
+		imagenes={[img1,img2,img3,img4]}
+	/>
+	
 </Layout>
