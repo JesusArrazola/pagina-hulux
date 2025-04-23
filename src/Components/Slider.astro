@@ -1,6 +1,12 @@
-<div class="glider-contain flex items-center justify-center xl:block">
+---
+interface Props{
+  height: number;
+}
+const {height} = Astro.props;
+---
+<div class:list={["glider-contain flex items-center justify-center xl:block",`max-w-[1430px]`]}>
   <div class="glider">
-    <slot /> <!-- Permite pasar los elementos hijos desde el padre -->
+    <slot />
   </div>
 </div>
 
