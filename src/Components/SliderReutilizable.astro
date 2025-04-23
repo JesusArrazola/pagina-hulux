@@ -1,0 +1,30 @@
+---
+interface Props {
+    class_: string;
+    prefix: string;
+    excludeArrows?: boolean;
+    excludeDots?: boolean;
+    maxWidth?: number;
+}
+
+const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro.props;
+---
+
+<div class:list={["glider-contain",maxWidth && `max-w-[${maxWidth}px]`]}>
+    <div class:list={[class_,""]}>
+      <slot />
+    </div>
+    <div class="h-12 aspect-square">
+
+    </div>
+    {
+        !excludeArrows && (
+            <button aria-label="Previous" class={`${prefix}-glider-prev`}>«</button>
+            <button aria-label="Next" class={`${prefix}-glider-next`}>»</button>
+        )
+    }
+    {
+
+        !excludeDots && <div role="tablist" class:list={[`${prefix}-dots`,""]}></div>
+    }
+</div>
