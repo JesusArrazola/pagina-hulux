@@ -1,0 +1,20 @@
+---
+import ServiciosCard from "../ServiciosCard.astro";
+import SliderReutilizable from "../SliderReutilizable.astro";
+---
+
+<div class="flex flex-col items-center justify-center bg-secondary py-18 gap-12">
+    <h3 class="text-white font-bold text-2xl sm:text-4xl text-center"> Conoce nuestros servicios de internet </h3>
+    <!-- Prueba -->
+    <SliderReutilizable prefix="t" class_="testimonial" excludeArrows maxWidth={1430}>
+        <div class="flex items-center justify-center">
+            <ServiciosCard titulo="Residencial" texto="Disfruta de una conexión rápida y estable en tu hogar. Ideal para entretenimiento, educación y trabajo desde casa." />
+        </div>
+        <div class="flex items-center justify-center">
+            <ServiciosCard titulo="Dedicado" texto="Conexiones personalizadas para instituciones y grandes empresas, garantizando el máximo rendimiento y soporte personalizado." />
+        </div>
+        <div class="flex items-center justify-center">
+            <ServiciosCard titulo="Empresarial" texto="Soluciones de internet diseñadas para mantener tu negocio operando a máxima velocidad y eficiencia" />
+        </div>
+    </SliderReutilizable>
+</div>
