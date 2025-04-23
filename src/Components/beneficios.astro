@@ -1,0 +1,186 @@
+---
+import beneficiosImg from '../assets/Beneficios_Hulux_(1).png';
+---
+
+<style>
+  section.benefits-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+    background-color: transparent;
+  }
+
+  .benefits-circle {
+    position: relative;
+    width: 500px;
+    height: 675px;
+  }
+
+  .benefit-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .desktop-img {
+    display: block;
+  }
+
+  .mobile-img {
+    display: none;
+  }
+
+  .benefit-center-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #11293e;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .benefit-text {
+    position: absolute;
+    width: 180px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    font-family: Arial, sans-serif;
+  }
+
+  .benefit-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .benefit-text h3 {
+    color: #ff5e00;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  .benefit-text p {
+    font-size: 1.2rem;
+    color: #222;
+  }
+
+  .top-left {
+    top: 10%;
+    left: -260px;
+  }
+
+  .abajo-left {
+    top: 55%;
+    left: -260px;
+  }
+
+  .bottom-right {
+    bottom: 25%;
+    right: -250px;
+  }
+
+  .top-right {
+    top: 9%;
+    right: -250px;
+  }
+
+  .top-down {
+    top: 77%;
+    right: 30%;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    section.benefits-wrapper {
+      background-color: #11293e; /* Fondo oscuro para contraste con el GIF */
+    }
+
+    .desktop-img {
+      display: none;
+    }
+
+    .mobile-img {
+      display: block;
+    }
+
+    .benefit-center-text {
+      display: none; /* Oculta el texto "Beneficios" */
+    }
+
+    .benefit-text {
+      display: none;
+    }
+
+    .benefits-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      height: auto;
+    }
+  }
+</style>
+
+
+<section class="benefits-wrapper">
+  <div class="benefits-circle" id="benefits">
+    <!-- Imagen de escritorio -->
+    <img src={beneficiosImg.src} alt="Gráfico de beneficios" class="benefit-image desktop-img" />
+
+    <!-- Imagen móvil desde /public -->
+    <img src="public/Beneficios_de_Hulux.gif" alt="Gráfico beneficios móvil" class="benefit-image mobile-img" />
+
+    <!-- Texto central "Beneficios" -->
+    <div class="benefit-center-text">Beneficios</div>
+
+    <!-- Textos laterales (solo visibles en escritorio) -->
+    <div class="benefit-text top-left" data-animate>
+      <h3>Confiabilidad y velocidad</h3>
+      <p>Conexión confiable y veloz, respaldada por tecnología de vanguardia y soporte técnico 24/7.</p>
+    </div>
+
+    <div class="benefit-text abajo-left" data-animate>
+      <h3>Soporte personalizado</h3>
+      <p>Soporte disponible para ayudarte con cualquier necesidad técnica.</p>
+    </div>
+
+    <div class="benefit-text top-down" data-animate>
+      <h3>Alta capacidad de conexión</h3>
+      <p>Conecta múltiples dispositivos sin perder calidad ni velocidad.</p>
+    </div>
+
+    <div class="benefit-text bottom-right" data-animate>
+      <h3>Descuentos exclusivos</h3>
+      <p>Accede a cupones y experiencias adicionales.</p>
+    </div>
+
+    <div class="benefit-text top-right" data-animate>
+      <h3>Gana recompensas</h3>
+      <p>Recomienda el servicio y gana beneficios.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer para animaciones en desktop
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    observer.observe(el);
+  });
+</script>
