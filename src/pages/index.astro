@@ -2,7 +2,6 @@
 import Layout from "../Layouts/Layout.astro"
 import Contenedor from "../Components/contenedor.astro";
 import Highlights from "../Components/Highlights.astro";
-import Carrusel from "../Components/carrusel.astro";
 import Formulario from "../Components/formulario.astro";
 import ContenedorReusable from "../Components/ContenedorReusable.astro";
 import CasrruselComponent from "../Components/CasrruselComponent.astro";
@@ -24,6 +23,7 @@ import Slider from "../Components/Slider.astro";
 		logo
 		imagenes={[img1,img2,img3,img4]}
 	/>
+	<Formulario />
 	<Slider>
 		<div class="bg-secondary text-white">
 			hello
@@ -34,5 +34,4 @@ import Slider from "../Components/Slider.astro";
 		<div class="bg-tertiary text-secondary">
 		</div>
 	</Slider>
-	<Formulario />
 </Layout>
