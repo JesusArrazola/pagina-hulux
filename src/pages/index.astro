@@ -18,11 +18,13 @@ import Slider from "../Components/Slider.astro";
 	<Contenedor />
 	<ContenedorReusable />
 	<Highlights />
-	<Slider>
-		<div class="border border-alternate">Hello</div>
-		<div class="border border-alternate">World!</div>
-		<div class="border border-alternate">Hello</div>
-	</Slider>
+	<div class="flex flex-col items-center justify-center">
+		<Slider>
+			<div class="border border-alternate flex flex-col items-center justify-center px-6">  </div>
+			<div class="border border-alternate flex flex-col items-center justify-center px-6"><div class="border border-alternate w-full max-w-[340px]"> Hello</div></div>
+			<div class="border border-alternate flex flex-col items-center justify-center px-6"><div class="border border-alternate w-full max-w-[340px]"> Hello</div></div>
+		</Slider>
+	</div>
 	<CasrruselComponent
 		titulo="Conexiones que importan"
 		logo
