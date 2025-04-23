@@ -18,20 +18,15 @@ import Slider from "../Components/Slider.astro";
 	<Contenedor />
 	<ContenedorReusable />
 	<Highlights />
+	<Slider>
+		<div class="border border-alternate">Hello</div>
+		<div class="border border-alternate">World!</div>
+		<div class="border border-alternate">Hello</div>
+	</Slider>
 	<CasrruselComponent
 		titulo="Conexiones que importan"
 		logo
 		imagenes={[img1,img2,img3,img4]}
 	/>
 	<Formulario />
-	<Slider>
-		<div class="bg-secondary text-white">
-			hello
-		</div>
-		<div class="bg-primary text-white">
-			World!
-		</div>
-		<div class="bg-tertiary text-secondary">
-		</div>
-	</Slider>
 </Layout>
