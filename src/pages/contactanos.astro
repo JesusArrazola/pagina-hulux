@@ -1,13 +1,23 @@
 ---
 import Layout from "../Layouts/Layout.astro"
-import ContactanosHulux from "../Components/ContactanosHulux.astro";
 import Sucursales from "../Components/Secciones/Sucursales.astro";
 import Hero from "../Components/Hero.astro";
 
+import img1 from "../assets/Entretenimiento_hulux.png";
+import img2 from "../assets/Estudiando_con_hulux.png";
+import img3 from "../assets/Trabajando_con_hulux.png";
+import img4 from "../assets/Carr_2.4.png";
+
 import img from "../assets/images/fondo_contacto.png";
+import CasrruselComponent from "../Components/CasrruselComponent.astro";
 ---
 
 <Layout>
 	<Hero title="Contáctanos" subtitle="¡Hola!, ¿Cómo podemos ayudarte?" center  bgImage={img} />
 	<Sucursales />
+	<CasrruselComponent
+		titulo="Conexiones que importan"
+		logo
+		imagenes={[img1,img2,img3,img4]}
+	/>
 </Layout>
