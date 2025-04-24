@@ -1,0 +1,12 @@
+---
+interface Props {
+    y?: boolean;
+    bg?: boolean;
+}
+
+const {y=false, bg=false} = Astro.props;
+---
+
+<div class:list={["px-6 sm:px-9 lg:px-16", y && "", bg && "bg-secondary"]}>
+    <slot />
+</div>
