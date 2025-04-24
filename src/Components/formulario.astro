@@ -16,151 +16,161 @@ const municipioLocalidades = {
 'atita' | 'huichapan' | 'arenal'| 'salvador' | 'tetepango' | 'mixquiahuala', string[]>;
 ---
 
-<div class="form-container">
-  <h2>Información</h2>
-  <p>Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.</p>
+<!-- NUEVO -->
+<div class="form-wrapper">
+  <div class="form-container">
+    <h2>Información</h2>
+    <p>Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.</p>
 
-  <form id="formulario">
-    <div class="form-group">
-      <input type="text" placeholder="Nombre*" required />
-      <input type="text" placeholder="Apellidos*" required />
-    </div>
+    <form id="formulario">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre*" required />
+        <input type="text" placeholder="Apellidos*" required />
+      </div>
 
-    <div class="form-group">
-      <input type="tel" placeholder="Teléfono*" required />
-      <input type="tel" placeholder="Teléfono adicional" />
-    </div>
+      <div class="form-group">
+        <input type="tel" placeholder="Teléfono*" required />
+        <input type="tel" placeholder="Teléfono adicional" />
+      </div>
 
-    <div class="form-group">
-      <select id="estado" required>
-        <option value="">Estado*</option>
-        <option value="Hidalgo">Hidalgo</option>
-      </select>
+      <div class="form-group">
+        <select id="estado" required>
+          <option value="">Estado*</option>
+          <option value="Hidalgo">Hidalgo</option>
+        </select>
 
-      <select id="municipio" required>
-        <option value="">Seleccionar municipio*</option>
-        <option value="otro">Otro</option>
-        <option value="ajacuba">Ajacuba</option>
-        <option value="santiago">Santiago de Anaya</option>
-        <option value="tetepango">Tetepango</option>
-        <option value="salvador">San Salvador</option>
-        <option value="progreso">Progreso de Obregón</option>
-        <option value="mixquiahuala">Mixquiahuala</option>
-        <option value="tepa">Francisco I. Madero</option>
-        <option value="atita">Atitalaquia</option>
-        <option value="arenal">El arenal</option>
-        <option value="actopan">Actopan</option>
-        <option value="huichapan">Huichapan</option>
+        <select id="municipio" required>
+          <option value="">Seleccionar municipio*</option>
+          <option value="otro">Otro</option>
+          <option value="ajacuba">Ajacuba</option>
+          <option value="santiago">Santiago de Anaya</option>
+          <option value="tetepango">Tetepango</option>
+          <option value="salvador">San Salvador</option>
+          <option value="progreso">Progreso de Obregón</option>
+          <option value="mixquiahuala">Mixquiahuala</option>
+          <option value="tepa">Francisco I. Madero</option>
+          <option value="atita">Atitalaquia</option>
+          <option value="arenal">El arenal</option>
+          <option value="actopan">Actopan</option>
+          <option value="huichapan">Huichapan</option>
+        </select>
+      </div>
 
-      </select>
-    </div>
+      <div class="form-group">
+        <select id="localidad" required>
+          <option value="">Seleccionar localidad*</option>
+        </select>
 
-    <div class="form-group">
-      <select id="localidad" required>
-        <option value="">Seleccionar localidad*</option>
-      </select>
+        <input type="text" placeholder="Dirección" />
+      </div>
 
-      <input type="text" placeholder="Dirección" />
-    </div>
+      <div class="form-group">
+        <select>
+          <option value="">Motivo de consulta*</option>
+          <option value="servicio">Contratar servicio</option>
+          <option value="soporte">Soporte técnico</option>
+        </select>
 
-    <div class="form-group">
-      <select>
-        <option value="">Motivo de consulta*</option>
-        <option value="servicio">Contratar servicio</option>
-        <option value="soporte">Soporte técnico</option>
-      </select>
+        <select>
+          <option value="">¿Cómo prefiere ser contactado?</option>
+          <option value="telefono">Teléfono</option>
+          <option value="correo">Correo electrónico</option>
+        </select>
+      </div>
 
-      <select>
-        <option value="">¿Cómo prefiere ser contactado?</option>
-        <option value="telefono">Teléfono</option>
-        <option value="correo">Correo electrónico</option>
-      </select>
-    </div>
-
-    <button type="submit">Enviar</button>
-  </form>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 </div>
 
 <style>
-    .form-section {
-      width: 100%;
-      min-height: 100vh;
-      background: linear-gradient(to right, #003049, #00253a);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 4rem 1rem;
-      align-content: center;
-    }
-  
-    .form-container {
-      background: #11293e;
-      color: white;
-      max-width: 100%;
-      width: 100%;
-      padding: 2rem;
-      align-items: center;
-    }
-  
-    .form-container h2 {
-      color: #ff6600;
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .form-container p {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 1rem;
-      color: #f0f0f0;
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-  
+  /* NUEVO - fondo y centrado del componente */
+  .form-wrapper {
+    background: #11293e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .form-container {
+    background: #11293e;
+    color: #f0f0f0;
+    width: 100%;
+    max-width: 620px;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+  }
+
+  .form-container h2 {
+    color: #ff6600;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-container p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #f0f0f0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .form-group input,
+  .form-group select {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    color: #333;
+    font-size: 1rem;
+  }
+
+  button {
+    background: #ff6600;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #cddb00;
+  }
+
+  @media (max-width: 768px) {
     .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5rem;
+      flex-direction: column;
     }
-  
-    .form-group input,
-    .form-group select {
-      flex: 2;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: none;
-      background: white;
-      color: #333;
-      font-size: 1rem;
+
+    .form-container {
+      margin: 1rem;
     }
-  
-    button {
-      background: #ff6600;
-      color: white;
-      padding: 1rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
-    }
-  
-    button:hover {
-      background: #e55a00;
-    }
-  
-    @media (max-width: 768px) {
-      .form-group {
-        flex-direction: column;
-      }
-    }
-  </style>
+  }
+</style>
+
 
 <script type="module">
   document.addEventListener("DOMContentLoaded", () => {
