@@ -22,11 +22,12 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
 
   <!-- Contenido -->
   <div
-    class:list={[
-      `flex flex-col justify-center w-full relative z-10 top-[${mobileTopMargin}px] sm:top-[222px] lg:top-[311px]`,
-      center && "items-center"
-    ]}
-  >
+  class:list={[
+    "flex flex-col justify-center w-full relative z-10 sm:top-[222px] lg:top-[311px]",
+    center && "items-center"
+  ]}
+  style={`top: ${mobileTopMargin}px`}
+>
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">{title}</h1>
     <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
       {subtitle}
