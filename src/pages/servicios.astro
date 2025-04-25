@@ -32,16 +32,16 @@ import PlanResidencial from "../Components/PlanResidencial.astro";
 
 			<SliderReutilizable excludeArrows class_="residenciales" prefix="sr">
 				<div class="flex items-center justify-center"> 
-					<PlanResidencial />
+					<PlanResidencial  nombre="Básico" cantidad={50} precio={349}/>
 				</div>
 				<div class="flex items-center justify-center">
-					<PlanResidencial />
+					<PlanResidencial nombre="Estándar" cantidad={100} precio={449} />
 				</div>
 				<div class="flex items-center justify-center">
-					<PlanResidencial />
+					<PlanResidencial nombre="Pro" cantidad={200} precio={699}/>
 				</div>
 				<div class="flex items-center justify-center">
-					<PlanResidencial />
+					<PlanResidencial  nombre="Ultra" cantidad={500} precio={999}/>
 				</div>
 			</SliderReutilizable>
 		</section>

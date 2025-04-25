@@ -1,14 +1,24 @@
+---
+interface Props {
+    nombre: string;
+    cantidad: number;
+    precio: number;
+}
+
+const {cantidad, nombre, precio} = Astro.props;
+---
+
 <article class="w-80 rounded-xl bg-gradient-to-b from-secondary to-[#153D61] relative flex flex-col items-center justify-end gap-4 p-4 text-white text-center">
 						
     <div class="shadow-xl bg-blue-400 absolute w-full top-4 h-13 flex items-center justify-center">
-        <p class="text-white text-3xl font-bold text-center">Básico</p>							
+        <p class="text-white text-3xl font-bold text-center">{`${nombre}`}</p>							
     </div>
 
     <p class="mt-16 font-light text-center">Internet fibra óptica simétrico</p>
 
     <div class="text-center">
         <p class="font-bold text-4xl">
-            50 Megas
+            {`${cantidad} Megas`}
         </p>
         <p class="text-tertiary font-light">De velocidad</p>
     </div>
@@ -17,7 +27,9 @@
 
     <div class="flex items-center justify-center gap-2 w-full">
         <p class="text-4xl font-bold">
-            $499
+            {
+                `$${precio}`
+            }
         </p>
         <p class="font-bold text-tertiary">
             /mes
