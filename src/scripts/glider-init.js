@@ -10,6 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
       slidesToScroll: 1,
       draggable: true,
       dots: '.sr-dots',
+      arrows:{
+        prev: ".sr-glider-prev",
+        next: ".sr-glider-next"
+      },
       responsive: [
         {
           // lg: Tailwind = 1024px

@@ -1,4 +1,7 @@
 ---
+import ChevronRight from "../assets/icons/chevron-right.svg";
+import ChevronLeft from "../assets/icons/chevron-left.svg";
+
 interface Props {
     class_: string;
     prefix: string;
@@ -10,7 +13,7 @@ interface Props {
 const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro.props;
 ---
 
-<div class:list={["glider-contain",maxWidth && `max-w-[${maxWidth}px]`]}>
+<div class:list={["glider-contain",maxWidth && `max-w-[${maxWidth}px] relative`]}>
     <div class:list={[class_,""]}>
       <slot />
     </div>
@@ -19,8 +22,19 @@ const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro
     </div>
     {
         !excludeArrows && (
-            <button aria-label="Previous" class={`${prefix}-glider-prev`}>«</button>
-            <button aria-label="Next" class={`${prefix}-glider-next`}>»</button>
+            <button
+                aria-label="Previous"
+                class={`${prefix}-glider-prev absolute top-1/2 -translate-y-1/2 left-0`}
+            >
+               <ChevronLeft class={"hover:cursor-pointer"}/> 
+            </button>
+
+            <button
+                aria-label="Next"
+                class={`${prefix}-glider-next absolute top-1/2 -translate-y-1/2 right-0`}
+            >
+                <ChevronRight  class:list={"cursor-pointer"}/>
+            </button>
         )
     }
     {
