@@ -1,0 +1,84 @@
+---
+const valores = [
+  {
+    titulo: "Innovación",
+    texto: "Fomentamos nuevas ideas para resolver los desafíos del futuro.",
+    icono: "💡",
+    color: "bg-orange-600 text-white",
+    offset: "-translate-y-4",
+  },
+  {
+    titulo: "Compromiso",
+    texto: "Estamos comprometidos con nuestros clientes y equipo.",
+    icono: "🤝",
+    color: "bg-gray-200 text-black",
+    offset: "translate-y-6",
+  },
+  {
+    titulo: "Inclusión",
+    texto: "Creemos en un entorno diverso y accesible para todos.",
+    icono: "📍",
+    color: "bg-orange-600 text-white",
+    offset: "-translate-y-6",
+  },
+  {
+    titulo: "Excelencia",
+    texto: "Buscamos superar expectativas con calidad.",
+    icono: "🏅",
+    color: "bg-gray-200 text-black",
+    offset: "translate-y-4",
+  },
+];
+---
+
+<div class="bg-[#11293e] px-4 py-12">
+    <h2 class="text-white text-3xl font-bold text-center mb-12">Nuestros valores</h2>
+  
+
+  <div class="flex flex-wrap justify-center gap-6 md:gap-10 max-w-6xl">
+    {valores.map((valor, i) => (
+      <div
+        class={`relative w-40 h-40 sm:w-48 sm:h-48 [perspective:1000px] transition-transform duration-300 ${valor.offset}`}
+        id={`container-${i}`}
+      >
+        <div
+          id={`card-${i}`}
+          class="w-full h-full rounded-full transform-style-3d transition-transform duration-700"
+        >
+          <div class={`absolute w-full h-full ${valor.color} rounded-full flex flex-col items-center justify-center backface-hidden`}>
+            <span class="text-3xl sm:text-4xl mb-2">{valor.icono}</span>
+            <p class="text-sm sm:text-base font-bold">{valor.titulo}</p>
+          </div>
+          <div class="absolute w-full h-full bg-white text-black rounded-full flex items-center justify-center p-4 text-center [transform:rotateY(180deg)] backface-hidden">
+            <p class="text-xs sm:text-sm">{valor.texto}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const valores = Array.from(document.querySelectorAll("[id^='card-']"));
+    valores.forEach((card) => {
+      card.parentElement.addEventListener("click", () => {
+        card.classList.toggle("rotated");
+      });
+    });
+  });
+</script>
+
+<style>
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotated {
+    transform: rotateY(180deg);
+  }
+</style>

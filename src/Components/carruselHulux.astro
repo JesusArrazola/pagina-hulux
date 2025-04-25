@@ -1,0 +1,85 @@
+---
+const imagenes = [
+  "/src/assets/hulux/diadelamujer.jpg",
+  "/src/assets/hulux/2025-03-07.png",
+  "/src/assets/hulux/autonoma.jpg",
+  "/src/assets/hulux/diademuertos.jpg",
+  "/src/assets/hulux/IMG_1237.jpg",
+  "/src/assets/hulux/IMG-20240416-WA0031.jpg",
+  "/src/assets/hulux/IMG-20240516-WA0044.jpg",
+  "/src/assets/hulux/IMG-20240516-WA0045.jpg",
+  "/src/assets/hulux/photo_4967804791304596269_y.jpg",
+  "/src/assets/hulux/photo_4967804791304596274_y.jpg",
+  "/src/assets/hulux/promocion.jpg",
+];
+---
+
+<style>
+  .carrusel-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 2rem 1rem;
+    background-color: #11293e; /* Sin fondo */
+  }
+
+  .carrusel-scroll {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: autoScroll 35s linear infinite;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /* Ocultar scroll */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .carrusel-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .slide-container {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .img-card {
+    height: 260px;
+    width: 320px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @keyframes autoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 768px) {
+    .img-card {
+      width: 260px;
+      height: 200px;
+    }
+  }
+</style>
+
+<div class="carrusel-wrapper">
+  <div class="carrusel-scroll">
+    {imagenes.map((src) => (
+      <div class="slide-container">
+        <article class="img-card">
+          <img src={src} alt="Imagen del carrusel Hulux" />
+        </article>
+      </div>
+    ))}
+  </div>
+</div>
