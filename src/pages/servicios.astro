@@ -1,6 +1,6 @@
 ---
-import Layout from "../Layouts/Layout.astro"
-import imgHero from "../assets/Mother-Helping-her-Daughter-with-her-Homework-2.png";
+import Layout from "../Layouts/Layout.astro";
+import img from "../assets/images/services_hero.gif";
 import Hero from "../Components/Hero.astro";
 import CasrruselComponent from "../Components/CasrruselComponent.astro";
 
@@ -9,18 +9,49 @@ import img1 from "../assets/Entretenimiento_hulux.png";
 import img2 from "../assets/Estudiando_con_hulux.png";
 import img3 from "../assets/Trabajando_con_hulux.png";
 import img4 from "../assets/Carr_2.4.png";
+import Padding from "../Components/Utilidades/Padding.astro";
+import SliderReutilizable from "../Components/SliderReutilizable.astro";
+import PlanResidencial from "../Components/PlanResidencial.astro";
 ---
 
 <Layout>
 	<Hero
-		bgImage={imgHero}
 		title="Nuestros servicios"
 		subtitle="Ofrecemos paquetes de internet diseñados para satisfacer todas tus necesidades de conectividad, con la confiabilidad y velocidad que mereces."
+		bgImage={img}
 	/>
-	
+
+	<Padding>
+
+		<section class="py-8 text-secondary">
+			<h2 class="font-bold text-2xl sm:text-4xl mb-12">Servicios residenciales</h2>
+			<p class="mb-8">
+				Estos paquetes llegan a su hogar mediante fibra óptica, diseñados para satisfacer todas tus necesidades
+				de contectividad, con la confiabilidad y velocidad que mereces. Elige el paquete que mejor se adapte a tu estilo de vida.
+			</p>
+
+			<SliderReutilizable excludeArrows class_="residenciales" prefix="sr">
+				<div class="flex items-center justify-center"> 
+					<PlanResidencial />
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial />
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial />
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial />
+				</div>
+			</SliderReutilizable>
+		</section>
+
+	</Padding>
+
 	<CasrruselComponent
 		titulo="Tenemos un plan perfecto para tí"
 		imagenes={[img1,img2,img3,img4]}
 	/>
+
 	
 </Layout>

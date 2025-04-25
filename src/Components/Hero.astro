@@ -12,8 +12,8 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
 ---
 <div
   class:list={[
-    "bg-no-repeat bg-center bg-cover h-[50vh] lg:h-[85vh] relative text-white",
-    !center && "px-6 sm:px-9 lg:px-16"
+  "bg-no-repeat bg-center bg-cover h-[50vh] lg:h-[85vh] max-h-[780px] relative text-white",
+  !center && "px-6 sm:px-9 lg:px-16"
   ]}
   style={`background-image: url(${bgImage.src})`}
 >
@@ -23,11 +23,10 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
   <!-- Contenido -->
   <div
   class:list={[
-    "flex flex-col justify-center w-full relative z-10 sm:top-[222px] lg:top-[311px]",
-    center && "items-center"
+  "flex flex-col justify-center w-full relative z-10 top-1/2 -translate-y-1/2",
+  center && "items-center"
   ]}
-  style={`top: ${mobileTopMargin}px`}
->
+  >
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">{title}</h1>
     <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
       {subtitle}
