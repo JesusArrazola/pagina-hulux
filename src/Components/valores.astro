@@ -3,53 +3,50 @@ const valores = [
   {
     titulo: "Innovación",
     texto: "Estamos constantemente buscando nuevas tecnologías y métodos para mejorar nuestros servicios.",
-    icono: "💡",
+    imagen: "src/assets/Valores/Innovación.png",
     color: "bg-orange-600 text-white",
     offset: "-translate-y-4",
   },
   {
     titulo: "Compromiso",
     texto: "Nos dedicamos a ofrecer el mejor servicio posible, con un enfoque en la satisfacción del cliente.",
-    icono: "🤝",
-    color: "bg-gray-200 text-black",
+    imagen: "src/assets/Valores/Compromiso.png",
+    color: "bg-white text-black",
     offset: "translate-y-6",
   },
   {
     titulo: "Inclusión",
     texto: "Nos esforzamos por llegar a todas las comunidades, especialmente aquellas que han sido desatendidas.",
-    icono: "📍",
+    imagen: "src/assets/Valores/Inclusión.png",
     color: "bg-orange-600 text-white",
     offset: "-translate-y-6",
   },
   {
     titulo: "Excelencia",
     texto: "Mantenemos los más altos estándares de calidad en todo lo que hacemos.",
-    icono: "🏅",
-    color: "bg-gray-200 text-black",
+    imagen: "src/assets/Valores/Excelencia.png",
+    color: "bg-white text-black",
     offset: "translate-y-4",
   },
 ];
 ---
 
 <div class="bg-[#11293e] px-4 py-12">
-    <h2 class="text-white text-3xl font-bold text-center mb-12">Nuestros valores</h2>
-  
+  <h2 class="text-white text-3xl font-bold text-center mb-12">Nuestros valores</h2>
 
   <div class="flex flex-wrap justify-center gap-6 md:gap-20 max-w-8xl">
-    {valores.map((valor, i) => (
-      <div
-        class={`relative w-40 h-40 sm:w-48 sm:h-48 [perspective:1000px] transition-transform duration-300 ${valor.offset}`}
-        id={`container-${i}`}
+    {valores.map((valor) => (
+      <div class={`relative w-40 h-40 sm:w-64 sm:h-64 [perspective:1000px] transition-transform duration-300 ${valor.offset}`}
+
+
+        data-valor-card
       >
-        <div
-          id={`card-${i}`}
-          class="w-full h-full rounded-full transform-style-3d transition-transform duration-700"
-        >
+        <div class="card-inner w-full h-full rounded-full transform-style-3d transition-transform duration-700">
           <div class={`absolute w-full h-full ${valor.color} rounded-full flex flex-col items-center justify-center backface-hidden`}>
-            <span class="text-3xl sm:text-4xl mb-2">{valor.icono}</span>
+            <img src={valor.imagen} ... class="w-10 h-10 sm:w-16 sm:h-16 mb-4" />
             <p class="text-sm sm:text-base font-bold">{valor.titulo}</p>
           </div>
-          <div class="absolute w-full h-full bg-white text-black rounded-full flex items-center justify-center p-4 text-center [transform:rotateY(180deg)] backface-hidden">
+          <div class="absolute w-full h-full bg-#11293e text-white rounded-full flex items-center justify-center p-4 text-center [transform:rotateY(180deg)] backface-hidden">
             <p class="text-xs sm:text-sm">{valor.texto}</p>
           </div>
         </div>
@@ -58,13 +55,15 @@ const valores = [
   </div>
 </div>
 
-<script>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const valores = Array.from(document.querySelectorAll("[id^='card-']"));
-    valores.forEach((card) => {
-      card.parentElement.addEventListener("click", () => {
-        card.classList.toggle("rotated");
-      });
+    document.querySelectorAll("[data-valor-card]").forEach((container) => {
+      const card = container.querySelector(".card-inner");
+      if (card) {
+        container.addEventListener("click", () => {
+          card.classList.toggle("rotated");
+        });
+      }
     });
   });
 </script>
