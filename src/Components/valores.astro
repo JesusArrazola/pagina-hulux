@@ -2,28 +2,28 @@
 const valores = [
   {
     titulo: "Innovación",
-    texto: "Fomentamos nuevas ideas para resolver los desafíos del futuro.",
+    texto: "Estamos constantemente buscando nuevas tecnologías y métodos para mejorar nuestros servicios.",
     icono: "💡",
     color: "bg-orange-600 text-white",
     offset: "-translate-y-4",
   },
   {
     titulo: "Compromiso",
-    texto: "Estamos comprometidos con nuestros clientes y equipo.",
+    texto: "Nos dedicamos a ofrecer el mejor servicio posible, con un enfoque en la satisfacción del cliente.",
     icono: "🤝",
     color: "bg-gray-200 text-black",
     offset: "translate-y-6",
   },
   {
     titulo: "Inclusión",
-    texto: "Creemos en un entorno diverso y accesible para todos.",
+    texto: "Nos esforzamos por llegar a todas las comunidades, especialmente aquellas que han sido desatendidas.",
     icono: "📍",
     color: "bg-orange-600 text-white",
     offset: "-translate-y-6",
   },
   {
     titulo: "Excelencia",
-    texto: "Buscamos superar expectativas con calidad.",
+    texto: "Mantenemos los más altos estándares de calidad en todo lo que hacemos.",
     icono: "🏅",
     color: "bg-gray-200 text-black",
     offset: "translate-y-4",
@@ -35,7 +35,7 @@ const valores = [
     <h2 class="text-white text-3xl font-bold text-center mb-12">Nuestros valores</h2>
   
 
-  <div class="flex flex-wrap justify-center gap-6 md:gap-10 max-w-6xl">
+  <div class="flex flex-wrap justify-center gap-6 md:gap-20 max-w-8xl">
     {valores.map((valor, i) => (
       <div
         class={`relative w-40 h-40 sm:w-48 sm:h-48 [perspective:1000px] transition-transform duration-300 ${valor.offset}`}
