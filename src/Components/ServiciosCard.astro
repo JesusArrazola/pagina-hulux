@@ -9,7 +9,7 @@ const {titulo, texto, imagen} = Astro.props;
 import ChevronRight from "../assets/icons/chevron-right.svg";
 ---
 
-<article class="flex flex-col items-center justify-between py-6 px-4 h-[410px] w-[320px] border rounded-md bg-white">
+<article class="flex flex-col items-center justify-between py-6 px-4 h-[410px] w-[320px] border rounded-md bg-white hover:animate-shake">
   {
     imagen? <div class:list={["rounded-full aspect-square w-[150px] bg-center bg-cover",`bg-[url(${imagen})]`]}></div>:
     <div class:list={["rounded-full aspect-square w-[150px] bg-center bg-cover",`bg-[url(../assets/Entretenimiento_hulux.png)]`]}></div>
