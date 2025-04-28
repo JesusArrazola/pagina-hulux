@@ -8,7 +8,7 @@ interface Props {
 const {cantidad, nombre, caracteristicas} = Astro.props;
 ---
 
-<article class="w-80 rounded-xl bg-white relative flex flex-col items-center justify-end gap-4 p-4 text-secondary text-center drop-shadow-lg">
+<article class="w-80 h-[424px] rounded-xl bg-white relative flex flex-col items-center justify-between gap-4 p-4 text-secondary text-center drop-shadow-lg">
 						
     <div class="shadow-xl bg-tertiary absolute w-full top-4 h-12 flex items-center justify-center">
         <p class="text-secondary text-3xl font-bold text-center">{`${nombre}`}</p>							
@@ -38,7 +38,7 @@ const {cantidad, nombre, caracteristicas} = Astro.props;
     </div>
 
     <div class="w-full mb-2">
-        <a href="https://api.whatsapp.com/send/?phone=7727273403&text=%20Hola,%20me%20comunico%20desde%20el%20sitio%20oficial%20de%20Hulux.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20empresarial%20avanzado%20de%20250%20MB%20por%20favor?" class="block w-full bg-secondary py-3 rounded-md mb-1 text-white">
+        <a href={`https://api.whatsapp.com/send/?phone=7727273403&text=%20Hola,%20me%20comunico%20desde%20el%20sitio%20oficial%20de%20Hulux.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20empresarial%20${nombre}%20de%20${cantidad}%20MB%20por%20favor?`} class="block w-full bg-secondary py-3 rounded-md mb-1 text-white">
             Conocer más
         </a>
     </div>
