@@ -21,28 +21,31 @@ import PlanResidencial from "../Components/PlanResidencial.astro";
 		bgImage={img}
 	/>
 
-	<Padding>
+	<div class="bg-secondary">
+		<a id="residencial"></a>
+		<Padding>
 
-		<section class="py-8 text-secondary">
-			<h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center sha">Servicios residenciales</h2>
-
-			<SliderReutilizable class_="residenciales" prefix="sr">
-				<div class="flex items-center justify-center"> 
-					<PlanResidencial  nombre="Básico" cantidad={50} precio={349}/>
-				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial nombre="Estándar" cantidad={100} precio={449} />
-				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial nombre="Pro" cantidad={200} precio={699}/>
-				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial  nombre="Ultra" cantidad={500} precio={999}/>
-				</div>
-			</SliderReutilizable>
-		</section>
-
-	</Padding>
+			<section class="py-8 text-white relative">
+				<h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center sha">Servicios residenciales</h2>
+	
+				<SliderReutilizable class_="residenciales" prefix="sr">
+					<div class="flex items-center justify-center"> 
+						<PlanResidencial  nombre="Básico" cantidad={50} precio={349}/>
+					</div>
+					<div class="flex items-center justify-center">
+						<PlanResidencial nombre="Estándar" cantidad={100} precio={449} />
+					</div>
+					<div class="flex items-center justify-center">
+						<PlanResidencial nombre="Pro" cantidad={200} precio={699}/>
+					</div>
+					<div class="flex items-center justify-center">
+						<PlanResidencial  nombre="Ultra" cantidad={500} precio={999}/>
+					</div>
+				</SliderReutilizable>
+			</section>
+	
+		</Padding>
+	</div>
 
 	<CasrruselComponent
 		titulo="Tenemos un plan perfecto para tí"

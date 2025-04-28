@@ -13,7 +13,7 @@ interface Props {
 const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro.props;
 ---
 
-<div class:list={["glider-contain",maxWidth && `max-w-[${maxWidth}px] relative`]}>
+<div class:list={["glider-contain relative",maxWidth && `max-w-[${maxWidth}px]`]}>
     <div class:list={[class_,""]}>
       <slot />
     </div>
@@ -21,24 +21,33 @@ const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro
 
     </div>
     {
-        !excludeArrows && (
-            <button
-                aria-label="Previous"
-                class={`${prefix}-glider-prev absolute top-1/2 -translate-y-1/2 left-0`}
-            >
-               <ChevronLeft class={"hover:cursor-pointer"}/> 
-            </button>
 
-            <button
-                aria-label="Next"
-                class={`${prefix}-glider-next absolute top-1/2 -translate-y-1/2 right-0`}
-            >
-                <ChevronRight  class:list={"cursor-pointer"}/>
-            </button>
-        )
-    }
-    {
+        !excludeDots && <div class="flex items-center justify-center gap-2">
+            {/* Arrow */}
 
-        !excludeDots && <div role="tablist" class:list={[`${prefix}-dots`,""]}></div>
+            {
+                !excludeArrows &&
+                    <button
+                        aria-label="Previous"
+                        class={`${prefix}-glider-prev  relative sm:absolute top-1/2 -translate-y-1/2 left-0 2xl:hidden`}
+                    >
+                <ChevronLeft class={"hover:cursor-pointer"}/> 
+                </button>
+            }
+
+            {/* Dots */}
+            <div role="tablist" class:list={[`${prefix}-dots`,""]}></div>
+
+            {/* Arrow */}
+            {
+                !excludeArrows &&
+                <button
+                    aria-label="Next"
+                    class={`${prefix}-glider-next relative sm:absolute top-1/2 -translate-y-1/2 right-0 2xl:hidden`}
+                >
+                    <ChevronRight  class:list={"cursor-pointer"}/>
+                </button>
+            }
+        </div>
     }
 </div>
