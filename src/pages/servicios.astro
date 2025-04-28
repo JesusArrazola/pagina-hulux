@@ -13,6 +13,7 @@ import Padding from "../Components/Utilidades/Padding.astro";
 import SliderReutilizable from "../Components/SliderReutilizable.astro";
 import PlanResidencial from "../Components/PlanResidencial.astro";
 import BgContenedor from "../Components/Utilidades/BgContenedor.astro";
+import PlanEmpresarial from "../Components/PlanEmpresarial.astro";
 ---
 
 <Layout>
@@ -92,17 +93,36 @@ import BgContenedor from "../Components/Utilidades/BgContenedor.astro";
 
 			<SliderReutilizable class_="empresariales" prefix="emp">
 				<div class="flex items-center justify-center"> 
-					<PlanResidencial  nombre="Básico + TV" cantidad={50} precio={449}/>
+					<PlanEmpresarial  nombre="Básico" cantidad={100} caracteristicas={[
+						"Soporte técnico prioritario",
+						"Dirección IP Fija",
+						"SLA de 90%",
+					]}/>
 				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial nombre="Estándar + TV" cantidad={100} precio={549} />
+				<div class="flex items-center justify-center"> 
+					<PlanEmpresarial  nombre="Avanzado" cantidad={250} caracteristicas={[
+						"Beneficios plan básico +",
+						"Cuenta de correo",
+						"Hosting web de hasta 25GB",
+						"Servicio de VPN"
+					]}/>
 				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial nombre="Pro + TV" cantidad={200} precio={799}/>
+				<div class="flex items-center justify-center"> 
+					<PlanEmpresarial  nombre="Premium" cantidad={500} caracteristicas={[
+						"Beneficios plan avanzado +",
+						"Análisis de tráfico en tiempo real",
+						"Gestión avanzada de ancho de banda",
+					]}/>
 				</div>
-				<div class="flex items-center justify-center">
-					<PlanResidencial  nombre="Ultra + TV" cantidad={500} precio={1099}/>
+				<div class="flex items-center justify-center"> 
+					<PlanEmpresarial  nombre="Élite" cantidad={750} caracteristicas={[
+						"Beneficios plan premium +",
+						"Hosting de servidores",
+						"Dominios corporativos",
+						"Servicios en la nube"
+					]}/>
 				</div>
+
 			</SliderReutilizable>
 		</section>
 	</BgContenedor>
