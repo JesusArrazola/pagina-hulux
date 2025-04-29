@@ -1,7 +1,6 @@
 ---
 import Hero from "./Hero.astro";
 import Padding from "./Utilidades/Padding.astro";
-import img from "../assets/images/services_hero.gif";
 import type { FAQData } from "../types/faq";
 
 
@@ -11,7 +10,7 @@ interface Props {
 const {data} = Astro.props;
 ---
 
-<Hero bgImage={img} title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
+<Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
 
     <Padding bg>
         <div class="py-24 max-w-6xl mx-auto flex flex-col md:flex-row gap-12 text-white">

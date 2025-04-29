@@ -2,7 +2,7 @@
 
 interface Props {
   center?: boolean;
-  bgImage: ImageMetadata;
+  bgImage?: ImageMetadata;
   title: string;
   subtitle: string;
 }
@@ -15,7 +15,7 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
   "hero h-[50vh] lg:h-[85vh] max-h-[780px] relative text-white",
   !center && "px-6 sm:px-9 lg:px-16"
   ]}
-  style={`background-image: url(${bgImage.src})`}
+  style={`background-image: url(${bgImage?.src || "/server.gif"})`}
 >
   <!-- Capa de superposición -->
   <div class="absolute inset-0 bg-[#11293e] opacity-20 z-0"></div>
