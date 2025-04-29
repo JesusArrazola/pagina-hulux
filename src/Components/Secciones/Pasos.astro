@@ -1,0 +1,57 @@
+---
+import Padding from "../Utilidades/Padding.astro";
+import pasosImg from "../../assets/images/pasos_contratacion.png"
+---
+
+<section class="py-16 relative text-xs">
+    <Padding>
+        <h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center text-secondary">Pasos para<span class="text-primary"> contratar</span></h2>
+        <div class="flex items-center justify-around gap-2 mx-auto mb-4">
+            <div class="max-w-[320px] text-center">
+                <header class="font-bold text-primary mb-4">
+                    1. Envíanos tu ubicación
+                </header>
+                <p>
+                    A través de whatsapp para verificar la cobertura en tu zona
+                </p>
+            </div>
+            <div class="max-w-[320px] text-center">
+                <header class="font-bold text-primary mb-4">
+                    3. Envíanos tus documentos
+                </header>
+                <p>
+                    para la contratación. <br> (Identificación oficial y comprobante de domicilio)
+                </p>
+            </div>
+            <div class="max-w-[320px] text-center">
+                <header class="font-bold text-primary mb-4">
+                    5. Indícanos el día y la hora
+                </header>
+                <p>
+                    para que acudamos a realizar tu instalación
+                </p>
+            </div>
+        </div>
+        <div class="w-[80%] mx-auto">
+            <img src={pasosImg.src} alt="Pasos contratación">
+        </div>
+        <div class="flex items-center justify-center gap-12 mx-auto mb-4">
+            <div class="max-w-[320px] text-center">
+                <header class="font-bold text-primary mb-4">
+                    2. Elige el paquete
+                </header>
+                <p>
+                    que más se adapte a tus necesidades
+                </p>
+            </div>
+            <div class="max-w-[320px] text-center">
+                <header class="font-bold text-primary mb-4">
+                    5. Firma tu contrato
+                </header>
+                <p>
+                    Puedes hacerlo de manera física o digital.
+                </p>
+            </div>
+        </div>
+    </Padding>
+</section>

@@ -7,6 +7,6 @@ interface Props {
 const {y=false, bg=false} = Astro.props;
 ---
 
-<div class:list={["px-6 sm:px-9 lg:px-16", y && "", bg && "bg-secondary"]}>
+<div class:list={["px-6 sm:px-9 lg:px-16", y && "py-8", bg && "bg-secondary"]}>
     <slot />
 </div>
