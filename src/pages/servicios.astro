@@ -23,6 +23,11 @@ import Pasos from "../Components/Secciones/Pasos.astro";
 		bgImage={img}
 	/>
 
+		<CasrruselComponent
+		titulo="Tenemos un plan perfecto para tí"
+		imagenes={[img1,img2,img3,img4]}
+	/>
+
 		<BgContenedor>
 			<a id="residencial"></a>
 			<section class="py-8 text-white relative">
@@ -47,12 +52,8 @@ import Pasos from "../Components/Secciones/Pasos.astro";
 				</SliderReutilizable>
 			</section>
 		</BgContenedor>
-
-	<CasrruselComponent
-		titulo="Tenemos un plan perfecto para tí"
-		imagenes={[img1,img2,img3,img4]}
-	/>
-	
+		
+		<Pasos />
 	<BgContenedor>
 		<a id="residencial-tv"></a>
 		<section class="py-8 text-white relative">
@@ -77,6 +78,7 @@ import Pasos from "../Components/Secciones/Pasos.astro";
 			</SliderReutilizable>
 		</section>
 	</BgContenedor>
+
 
 	<CasrruselComponent
 		titulo="Disfruta de la mejor experiencia de entretenimiento"
@@ -126,7 +128,5 @@ import Pasos from "../Components/Secciones/Pasos.astro";
 			</SliderReutilizable>
 		</section>
 	</BgContenedor>
-
-	<Pasos />
 	
 </Layout>
