@@ -16,6 +16,29 @@
     .animate-soft-blink {
       animation: soft-blink 2s ease-in-out infinite;
     }
+
+    @keyframes gradientChange {
+      0% {
+          background-position: 0%
+      }
+
+      50% {
+          background-position: 100%
+      }
+
+      100% {
+          background-position: 0%
+      }
+  }
+
+  .gradient {
+      background: linear-gradient(90deg, blue, red);
+      background-size: 200% 200%;
+  }
+
+  .element-to-rotate {
+      animation: gradientChange 4s ease infinite;
+  }
   }
 
 @theme{

@@ -5,6 +5,13 @@ import Image from "astro/components/Image.astro"
 import img from "../assets/whatsappIcon.svg";
 import SubMenu from "../Components/SubMenu.astro";
 import Footer from '../Components/footer.astro';
+
+const path = Astro.url.pathname;
+
+const solidPaths: string[] = [];
+
+const solid = solidPaths.includes(path);
+console.log(path,solid);
 ---
 
 <html lang="es" class="overscroll-none">
@@ -19,7 +26,7 @@ import Footer from '../Components/footer.astro';
 	</head>
 	<body>
 		<div id="top" class="hidden"></div>
-        <Header></Header>
+        <Header solid={solid}></Header>
         <slot />
 			<!-- Botón de whatsapp -->
 	<div class="bg-green-600 fixed bottom-0 right-0 m-4 rounded-full p-2">

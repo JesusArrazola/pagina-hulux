@@ -1,10 +1,15 @@
 ---
 import Logo from "./Logo.astro";
 
+interface Props{
+    solid?: boolean
+}
+
+const {solid = false} = Astro.props;
 const path = Astro.url.pathname;
 ---
 
-<header class="z-20 py-6 xl:py-8 px-6 sm:px-9 lg:px-16 flex items-center justify-between fixed w-full top-0 transition-colors">
+<header class:list={["z-20 py-6 xl:py-8 px-6 sm:px-9 lg:px-16 flex items-center justify-between fixed w-full top-0 transition-colors",solid && "solid"]}>
 
      <Logo classList={"transition-opacity duration-200"}/>
 
@@ -57,20 +62,27 @@ const path = Astro.url.pathname;
 <script>
     //Cambio de color en el header al hacer scroll
     const header = document.getElementsByTagName("header")[0];
-    const scrollDistance = 80;
-    if(scrollY > scrollDistance){
-        header.classList.add("bg-solid");
-    }
-    else header.classList.remove("bg-solid");
     
-    window.addEventListener("scroll", ()=>{
+    if(!header.classList.contains("solid")){
+        const scrollDistance = 80;
         if(scrollY > scrollDistance){
             header.classList.add("bg-solid");
-        }else{
-            header.classList.remove("bg-solid");
         }
-    });
+        else header.classList.remove("bg-solid");
+        
+        window.addEventListener("scroll", ()=>{
+            if(scrollY > scrollDistance){
+                header.classList.add("bg-solid");
+            }else{
+                header.classList.remove("bg-solid");
+            }
+        });
+    }else{
+        header.classList.add("bg-solid")
+    }
+</script>
 
+<script>
     //Botón menú
     const button = document.getElementById("button");
     const menu = document.getElementById("mobileMenu");

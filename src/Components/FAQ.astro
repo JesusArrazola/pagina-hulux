@@ -1,0 +1,70 @@
+---
+import Hero from "./Hero.astro";
+import Padding from "./Utilidades/Padding.astro";
+import img from "../assets/images/services_hero.gif";
+import type { FAQData } from "../types/faq";
+
+
+interface Props {
+    data: FAQData;
+}
+const {data} = Astro.props;
+---
+
+<Hero bgImage={img} title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
+
+    <Padding bg>
+        <div class="py-24 max-w-5xl mx-auto flex flex-col md:flex-row gap-12 text-white">
+            <div class="flex flex-col text-left basis-1/2">
+                <p class="inline-block font-semibold text-primary mb-4">Preguntas Frecuentes</p>
+                <p class="sm:text-4xl text-3xl font-extrabold text-base-content">Clientes nuevos</p>
+            </div>
+            <ul class="basis-1/2">
+                {
+                  data.questions.map((item) => (
+                    <li>
+                        <button class="btn relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10" aria-expanded="false">
+                            <span class="flex-1 text-base-content">{item.question}</span>
+                            <span class="text-tertiary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                                <path d="M6 9l6 6l6 -6"></path>
+                            </svg>
+                            </span>
+                        </button>
+                        <div class="text-light-text transition-all duration-300 ease-in-out max-h-0 overflow-hidden" style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">{item.answer}</div>
+                            </div>
+                        </div>
+                    </li>
+                  ))
+                }
+              </ul>
+        </div>
+    </Padding>
+
+<script>
+    let btns: NodeListOf<HTMLElement> = document.querySelectorAll(".btn");
+
+    btns.forEach(el => {
+        el.addEventListener("click",toggleFAQ);
+    });
+
+    
+
+    function toggleFAQ(this: HTMLElement): void {
+    btns.forEach(item => {
+        const sibling = item.nextElementSibling as HTMLElement;
+        sibling.setAttribute("aria-expanded","false");
+        sibling.style.maxHeight = "0";
+    });
+    const content = this.nextElementSibling as HTMLElement | null;
+    if (!content) return;
+
+    const expanded = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", expanded ? "false" : "true");
+    content.style.maxHeight = expanded ? "0" : content.scrollHeight + "px";
+
+}
+
+</script>

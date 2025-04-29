@@ -1,0 +1,29 @@
+{
+    "questions": [
+      {
+        "question": "¿Necesito línea telefónica para contratar Hulux Telecomunicaciones?",
+        "answer": "No es necesario tener ningún otro servicio para contratar el nuestro."
+      },
+      {
+        "question": "¿Cuáles son los requisitos de contratación?",
+        "answer": "Copia de identificación oficial del titular y comprobante de domicilio."
+      },
+      {
+        "question": "¿Cuál es el tiempo estimado para la instalación de mi servicio?",
+        "answer": "Se atiende en un lapso de 1 a 3 días hábiles"
+      },
+      {
+        "question": "¿Cuando se realiza el pago de instalación?",
+        "answer": "El pago se realiza con el instalador, una vez que haya comprobado que la velocidad sea acorde a su plan."
+      },
+      {
+        "question": "¿En cuántas cuotas se puede pagar la instalación?",
+        "answer": "Se puede diferir en hasta 10 mensualidades sin costo extra."
+      },
+      {
+        "question": "¿En dónde puedo realizar el pago de mi servicio?",
+        "answer": "Se puede realizar en cualquiera de nuestras oficinas, a través de transferencia comunicandote a soporte técnico o por medio de nuestra aplicación Hulux Connect"
+      }
+    ]
+  }
+  
