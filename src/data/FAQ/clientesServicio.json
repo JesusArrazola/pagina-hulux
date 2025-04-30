@@ -1,0 +1,37 @@
+
+{
+    "questions": [
+      {
+        "question": "¿Dónde puedo realizar el pago de mi servicio?",
+        "answer": "Se puede realizar en cualquiera de nuestras oficinas, a través de transferencia comunicándose a soporte técnico o por medio de la aplicación Hulux Connect"
+      },
+      {
+        "question": "¿Puedo cambiar la contraseña de mi módem?",
+        "answer": "En caso de contar con el servicio de Fibra Óptica es necesario enviar fotografía de la parte de enfrente de su módem por medio de WhatsApp, posteriormente compatiremos las indicaciones. De otra manera, será necesario acudir con su módem a alguna de nuestras oficinas."
+      },
+      {
+        "question": "¿Cómo puedo solicitar mi cambio de domicilio?",
+        "answer": "Solicite el cambio de su servicio a través de nuestro número de WhatsApp"
+      },
+      {
+        "question": "¿Qué costo tiene el cambio de domicilio?",
+        "answer": "Si es dentro de la misma localidad el costo es de $300. Si es fuera el costo es de $400"
+      },
+      {
+        "question": "¿Existe algún descuento por recomendar?",
+        "answer": "Sí, contáctanos para más información vía WhatsApp"
+      },
+      {
+        "question": "Cuál es mi fecha de pago",
+        "answer": "Su fecha de pago es exactamente el mismo día en que se realizó su instalación. Cuenta con 10 días naturales para realizar dicho pago. Posterior a esa fecha se aplica un cargo por pago a destiempo de $50 pesos. Para mayor información comunicarse a nuestro número de WhatsApp"
+      },
+      {
+        "question": "¿En caso de tormenta eléctrica debo desconectar mi equipo?",
+        "answer": "Es preferible desconectar de la corriente su antena o equipos de red, para evitar que se dañen por alguna descarga."
+      },
+      {
+        "question": "¿Cuál es el alcance de mi módem?",
+        "answer": "10 metros de alcance en interiores, existen otros factores que afectan directamente la calidad y potencia de la señal."
+      }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "questions":[
+        {
+            "question": "¿Qué es Hulux Connect?",
+            "answer": "Hulux Connect es una aplicación diseñada para nuestros clientes donde pueden diagnosticar su red, pagar sus facturas y reportar su servicio."
+        },
+        {
+            "question": "¿Cómo puedo descargar la app Hulux?",
+            "answer": "La app Hulux está disponible para descargar en las tiendas de aplicaciones de IOS y Android. Simplemente buscar ´Hulux Connect´ y sigue las instrucciones para descargar e instalar la app en tu dispositivo"
+        },
+        {
+            "question": "¿Cómo accedo a la app de Hulux Connect?",
+            "answer": "Ingresa tu ID de cliente Hulux y coloca el teléfono móvil que registro al momento de contratar. Puede solicitar sus datos de acceso contactando con sooprte técnico."
+        },
+        {
+            "question": "¿Cómo puedo pagar mi servicio a través de la app?",
+            "answer": "Inicia sesión en tu cuenta, ve a la sección de 'Facturas' y selecciona 'Pagar'. Verifica la información e ingresa tu correo electrónico, desliza para pagar tu servicio y sigue las instrucciones"
+        },
+        {
+            "question": "¿Cómo cambio mis preferencias de notificación?",
+            "answer": "Inicia sesión en tu cuenta, ingresa a la sección de notificaciones y da clic en desactivar notificaciones"
+        }
+    ]
+}

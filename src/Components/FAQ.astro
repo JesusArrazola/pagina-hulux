@@ -6,17 +6,15 @@ import type { FAQData } from "../types/faq";
 
 interface Props {
     data: FAQData;
+    title: string;
 }
-const {data} = Astro.props;
+const {data,title} = Astro.props;
 ---
-
-<Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
-
     <Padding bg>
         <div class="py-24 max-w-6xl mx-auto flex flex-col md:flex-row gap-12 text-white">
             <div class="flex flex-col text-left basis-1/2 md:basis-1/3">
                 <p class="inline-block font-semibold text-primary mb-4">Preguntas Frecuentes</p>
-                <p class="sm:text-4xl text-3xl font-extrabold text-base-content">Clientes nuevos</p>
+                <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{title}</p>
             </div>
             <ul class="md:basis-2/3 basis-1/2">
                 {

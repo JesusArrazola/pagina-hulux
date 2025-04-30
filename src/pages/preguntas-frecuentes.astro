@@ -1,9 +1,15 @@
 ---
 import Layout from "../Layouts/Layout.astro";
 import FAQ from "../Components/FAQ.astro";
-import data from "../data/faq.json";
+import dataClientesNuevos from "../data/faq.json";
+import dataClientesServicio from "../data/FAQ/clientesServicio.json";
+import dataHConnect from "../data/FAQ/hConnect.json";
+import Hero from "../Components/Hero.astro";
 ---
 
 <Layout>
-    <FAQ data={data}/>
+    <Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
+    <FAQ title="Clientes nuevos" data={dataClientesNuevos}/>
+    <FAQ title="Clientes con nuestro servicio" data={dataClientesServicio}/>
+    <FAQ title="Hulux Connect" data={dataHConnect}/>
 </Layout>
