@@ -1,180 +1,54 @@
 ---
 import beneficiosImg from '../assets/Beneficios_Hulux_(1).png';
+import BgContenedor from './Utilidades/BgContenedor.astro';
 ---
 
-<style>
-  section.benefits-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-    position: relative;
-    background-color: transparent;
-  }
-
-  .benefits-circle {
-    position: relative;
-    width: 500px;
-    height: 675px;
-  }
-
-  .benefit-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .desktop-img {
-    display: block;
-  }
-
-  .mobile-img {
-    display: none;
-  }
-
-  .benefit-center-text {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: #11293e;
-    z-index: 10;
-    text-align: center;
-  }
-
-  .benefit-text {
-    position: absolute;
-    width: 180px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    font-family: Arial, sans-serif;
-  }
-
-  .benefit-text.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .benefit-text h3 {
-    color: #ff5e00;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-  }
-
-  .benefit-text p {
-    font-size: 1.2rem;
-    color: #222;
-  }
-
-  .top-left {
-    top: 10%;
-    left: -260px;
-  }
-
-  .abajo-left {
-    top: 55%;
-    left: -260px;
-  }
-
-  .bottom-right {
-    bottom: 25%;
-    right: -250px;
-  }
-
-  .top-right {
-    top: 9%;
-    right: -250px;
-  }
-
-  .top-down {
-    top: 77%;
-    right: 30%;
-  }
-
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    section.benefits-wrapper {
-      background-color: #11293e; /* Fondo oscuro para contraste con el GIF */
-    }
-
-    .desktop-img {
-      display: none;
-    }
-
-    .mobile-img {
-      display: block;
-    }
-
-    .benefit-center-text {
-      display: none; /* Oculta el texto "Beneficios" */
-    }
-
-    .benefit-text {
-      display: none;
-    }
-
-    .benefits-circle {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 2rem 0;
-      height: auto;
-    }
-  }
-</style>
-
-
-<section class="benefits-wrapper">
-  <div class="benefits-circle" id="benefits">
+<section class="flex justify-center items-center px-4 py-8 pb-0.2 md:pb-15 relative bg-[#11293e] md:bg-white">
+  <div class="relative w-[500px] h-[675px] flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-0 md:h-[675px]" id="benefits">
     <!-- Imagen de escritorio -->
-    <img src={beneficiosImg.src} alt="Gráfico de beneficios" class="benefit-image desktop-img" />
+    <img src={beneficiosImg.src} alt="Gráfico de beneficios" class="w-full h-auto block md:block hidden" />
 
-    <!-- Imagen móvil desde /public -->
-    <img src="/Beneficios_de_Hulux.gif" alt="Gráfico beneficios móvil" class="benefit-image mobile-img" />
+    <!-- Imagen móvil -->
+    <img src="/Beneficios_de_Hulux.gif" alt="Gráfico beneficios móvil" class="w-full h-auto block md:hidden" />
 
     <!-- Texto central "Beneficios" -->
-    <div class="benefit-center-text">Beneficios</div>
-
-    <!-- Textos laterales (solo visibles en escritorio) -->
-    <div class="benefit-text top-left" data-animate>
-      <h3>Confiabilidad y velocidad</h3>
-      <p>Conexión confiable y veloz, respaldada por tecnología de vanguardia y soporte técnico 24/7.</p>
+    <div class="absolute top-[35%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-[#11293e] z-10 text-center hidden md:block">
+      Beneficios
     </div>
 
-    <div class="benefit-text abajo-left" data-animate>
-      <h3>Soporte personalizado</h3>
-      <p>Soporte disponible para ayudarte con cualquier necesidad técnica.</p>
+    <!-- Textos laterales -->
+    <div class="absolute w-[180px] text-center opacity-0 translate-y-5 transition-opacity duration-700 ease-in-out font-sans top-[10%] -left-[300px] hidden md:block" data-animate>
+      <h3 class="text-[#ff5e00] text-[1.3rem] font-bold mb-1">Confiabilidad y velocidad</h3>
+      <p class="text-[1.2rem] text-[#222]">Conexión confiable y veloz, respaldada por tecnología de vanguardia y soporte técnico 24/7.</p>
     </div>
 
-    <div class="benefit-text top-down" data-animate>
-      <h3>Alta capacidad de conexión</h3>
-      <p>Conecta múltiples dispositivos sin perder calidad ni velocidad.</p>
+    <div class="absolute w-[180px] text-center opacity-0 translate-y-5 transition-opacity duration-700 ease-in-out font-sans top-[55%] -left-[300px] hidden md:block" data-animate>
+      <h3 class="text-[#ff5e00] text-[1.3rem] font-bold mb-1">Soporte personalizado</h3>
+      <p class="text-[1.2rem] text-[#222]">Soporte disponible para ayudarte con cualquier necesidad técnica.</p>
     </div>
 
-    <div class="benefit-text bottom-right" data-animate>
-      <h3>Descuentos exclusivos</h3>
-      <p>Accede a cupones y experiencias adicionales.</p>
+    <div class="absolute w-[180px] text-center opacity-0 translate-y-5 transition-opacity duration-700 ease-in-out font-sans top-[77%] right-[30%] hidden md:block" data-animate>
+      <h3 class="text-[#ff5e00] text-[1.3rem] font-bold mb-1">Alta capacidad de conexión</h3>
+      <p class="text-[1.2rem] text-[#222]">Conecta múltiples dispositivos sin perder calidad ni velocidad.</p>
     </div>
 
-    <div class="benefit-text top-right" data-animate>
-      <h3>Gana recompensas</h3>
-      <p>Recomienda el servicio y gana beneficios.</p>
+    <div class="absolute w-[180px] text-center opacity-0 translate-y-5 transition-opacity duration-700 ease-in-out font-sans bottom-[25%] -right-[300px] hidden md:block" data-animate>
+      <h3 class="text-[#ff5e00] text-[1.3rem] font-bold mb-1">Descuentos exclusivos</h3>
+      <p class="text-[1.2rem] text-[#222]">Accede a cupones y experiencias adicionales.</p>
+    </div>
+
+    <div class="absolute w-[180px] text-center opacity-0 translate-y-5 transition-opacity duration-700 ease-in-out font-sans top-[9%] -right-[300px] hidden md:block" data-animate>
+      <h3 class="text-[#ff5e00] text-[1.3rem] font-bold mb-1">Gana recompensas</h3>
+      <p class="text-[1.2rem] text-[#222]">Recomienda el servicio y gana beneficios.</p>
     </div>
   </div>
 </section>
 
 <script>
-  // Intersection Observer para animaciones en desktop
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
         observer.unobserve(entry.target);
       }
     });

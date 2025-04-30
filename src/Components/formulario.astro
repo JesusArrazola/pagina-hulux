@@ -1,4 +1,6 @@
 ---
+import BgContenedor from "./Utilidades/BgContenedor.astro";
+
 const municipioLocalidades = {
   otro: [""],
   ajacuba: ["Centro", "Santiago Tezontlale"],
@@ -12,180 +14,95 @@ const municipioLocalidades = {
   salvador: ["La Estancia", "El Daxtha", "El Cerrito"],
   tetepango: ["La Estancia", "El Daxtha", "El Cerrito"],
   mixquiahuala: ["La Estancia", "El Daxtha", "El Cerrito"]
-} as Record<'otro' | 'actopan' | 'santiago' | 'ajacuba'| 'otro' | 'tepa' | 'progreso'| 
-'atita' | 'huichapan' | 'arenal'| 'salvador' | 'tetepango' | 'mixquiahuala', string[]>;
+} as Record<'otro' | 'actopan' | 'santiago' | 'ajacuba' | 'tepa' | 'progreso' | 
+'atita' | 'huichapan' | 'arenal' | 'salvador' | 'tetepango' | 'mixquiahuala', string[]>;
 ---
 
-<!-- NUEVO -->
-<div class="form-wrapper">
-  <div class="form-container">
-    <h2>Información</h2>
-    <p>Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.</p>
+<BgContenedor>
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-[#11293e] text-[#f0f0f0] w-full p-4 max-w-4xl p-8 shadow-xl rounded-2xl">
+      <h2 class="text-4xl text-[#ff6600] font-bold text-center mb-2">Información</h2>
+      <p class="text-2xl text-center mb-6">Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.</p>
 
-    <form id="formulario">
-      <div class="form-group">
-        <input type="text" placeholder="Nombre*" required />
-        <input type="text" placeholder="Apellidos*" required />
-      </div>
+      <form id="formulario" class="flex flex-col gap-6">
+        <div class="flex flex-wrap gap-4">
+          <input type="text" placeholder="Nombre*" required class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+          <input type="text" placeholder="Apellidos*" required class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+        </div>
 
-      <div class="form-group">
-        <input type="tel" placeholder="Teléfono*" required />
-        <input type="tel" placeholder="Teléfono adicional" />
-      </div>
+        <div class="flex flex-wrap gap-4">
+          <input type="tel" placeholder="Teléfono*" required class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+          <input type="tel" placeholder="Teléfono adicional" class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+        </div>
 
-      <div class="form-group">
-        <select id="estado" required>
-          <option value="">Estado*</option>
-          <option value="Hidalgo">Hidalgo</option>
-        </select>
+        <div class="flex flex-wrap gap-4">
+          <select id="estado" required class="bg-white flex-1 p-3 rounded-lg text-black text-base">
+            <option value="">Estado*</option>
+            <option value="Hidalgo">Hidalgo</option>
+          </select>
 
-        <select id="municipio" required>
-          <option value="">Seleccionar municipio*</option>
-          <option value="otro">Otro</option>
-          <option value="ajacuba">Ajacuba</option>
-          <option value="santiago">Santiago de Anaya</option>
-          <option value="tetepango">Tetepango</option>
-          <option value="salvador">San Salvador</option>
-          <option value="progreso">Progreso de Obregón</option>
-          <option value="mixquiahuala">Mixquiahuala</option>
-          <option value="tepa">Francisco I. Madero</option>
-          <option value="atita">Atitalaquia</option>
-          <option value="arenal">El arenal</option>
-          <option value="actopan">Actopan</option>
-          <option value="huichapan">Huichapan</option>
-        </select>
-      </div>
+          <select id="municipio" required class="bg-white flex-1 p-3 rounded-lg text-black text-base">
+            <option value="">Seleccionar municipio*</option>
+            <option value="otro">Otro</option>
+            <option value="ajacuba">Ajacuba</option>
+            <option value="santiago">Santiago de Anaya</option>
+            <option value="tetepango">Tetepango</option>
+            <option value="salvador">San Salvador</option>
+            <option value="progreso">Progreso de Obregón</option>
+            <option value="mixquiahuala">Mixquiahuala</option>
+            <option value="tepa">Francisco I. Madero</option>
+            <option value="atita">Atitalaquia</option>
+            <option value="arenal">El arenal</option>
+            <option value="actopan">Actopan</option>
+            <option value="huichapan">Huichapan</option>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <select id="localidad" required>
-          <option value="">Seleccionar localidad*</option>
-        </select>
+        <div class="flex flex-wrap gap-4">
+          <select id="localidad" required class="bg-white flex-1 p-3 rounded-lg text-black text-base">
+            <option value="">Seleccionar localidad*</option>
+          </select>
 
-        <input type="text" placeholder="Dirección" />
-      </div>
+          <input type="text" placeholder="Dirección" class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+        </div>
 
-      <div class="form-group">
-        <select>
-          <option value="">Motivo de consulta*</option>
-          <option value="servicio">Contratar servicio</option>
-          <option value="soporte">Soporte técnico</option>
-        </select>
+        <div class="flex flex-wrap gap-4">
+          <select class="bg-white flex-1 p-3 rounded-lg text-black text-base">
+            <option value="">Motivo de consulta*</option>
+            <option value="servicio">Contratar servicio</option>
+            <option value="soporte">Soporte técnico</option>
+          </select>
 
-        <select>
-          <option value="">¿Cómo prefiere ser contactado?</option>
-          <option value="telefono">Teléfono</option>
-          <option value="correo">Correo electrónico</option>
-        </select>
-      </div>
+          <select class="bg-white flex-1 p-3 rounded-lg text-black text-base">
+            <option value="">¿Cómo prefiere ser contactado?</option>
+            <option value="telefono">Teléfono</option>
+            <option value="correo">Correo electrónico</option>
+          </select>
+        </div>
 
-      <button type="submit">Enviar</button>
-    </form>
+        <button type="submit" class="bg-[#ff6600] hover:bg-[#cddb00] text-white font-semibold text-lg py-3 rounded-xl transition-colors duration-300 mt-2">
+          Enviar
+        </button>
+      </form>
+    </div>
   </div>
-</div>
-
-<style>
-  .form-wrapper {
-    background: #11293e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-  }
-
-  .form-container {
-    background: #11293e;
-    color: #f0f0f0;
-    width: 100%;
-    max-width: 620px;
-    padding: 2rem;
-    margin: 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border-radius: 1rem;
-  }
-
-  .form-container h2 {
-    color: #ff6600;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .form-container p {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    color: #f0f0f0;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .form-group input,
-  .form-group select {
-    flex: 1;
-    padding: 0.75rem;
-    border-radius: 10px;
-    border: none;
-    background: white;
-    color: #333;
-    font-size: 1rem;
-  }
-
-  button {
-    background: #ff6600;
-    color: white;
-    padding: 1rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background 0.3s ease;
-  }
-
-  button:hover {
-    background: #cddb00;
-  }
-
-  @media (max-width: 768px) {
-    .form-group {
-      flex-direction: column;
-    }
-
-    .form-container {
-      margin: 2rem;
-    }
-  }
-</style>
-
+</BgContenedor>
 
 <script type="module">
   document.addEventListener("DOMContentLoaded", () => {
     const municipioLocalidades = {
-        otro: [""],
-        ajacuba: ["Centro", "Santiago Tezontlale"],
-        santiago: ["Centro", "Cerritos", "El jaguey"],
-        actopan: ["La Estancia", "El Daxtha", "El Cerrito"],
-        tepa: ["La Estancia", "El Daxtha", "El Cerrito"],
-        progreso: ["La Estancia", "El Daxtha", "El Cerrito"],
-        atita: ["La Estancia", "El Daxtha", "El Cerrito"],
-        huichapan: ["La Estancia", "El Daxtha", "El Cerrito"],
-        arenal: ["La Estancia", "El Daxtha", "El Cerrito"],
-        salvador: ["La Estancia", "El Daxtha", "El Cerrito"],
-        tetepango: ["La Estancia", "El Daxtha", "El Cerrito"],
-        mixquiahuala: ["La Estancia", "El Daxtha", "El Cerrito"]
+      otro: [""],
+      ajacuba: ["Centro", "Santiago Tezontlale"],
+      santiago: ["Centro", "Cerritos", "El jaguey"],
+      actopan: ["La Estancia", "El Daxtha", "El Cerrito"],
+      tepa: ["La Estancia", "El Daxtha", "El Cerrito"],
+      progreso: ["La Estancia", "El Daxtha", "El Cerrito"],
+      atita: ["La Estancia", "El Daxtha", "El Cerrito"],
+      huichapan: ["La Estancia", "El Daxtha", "El Cerrito"],
+      arenal: ["La Estancia", "El Daxtha", "El Cerrito"],
+      salvador: ["La Estancia", "El Daxtha", "El Cerrito"],
+      tetepango: ["La Estancia", "El Daxtha", "El Cerrito"],
+      mixquiahuala: ["La Estancia", "El Daxtha", "El Cerrito"]
     };
 
     const municipioSelect = document.getElementById("municipio");
