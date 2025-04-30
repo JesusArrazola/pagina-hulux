@@ -3,9 +3,10 @@ interface Props {
     nombre: string;
     cantidad: number;
     precio: number;
+    formatoSimplificado: string;
 }
 
-const {cantidad, nombre, precio} = Astro.props;
+const {cantidad, nombre, precio, formatoSimplificado} = Astro.props;
 ---
 
 <article class="w-80 rounded-xl bg-white relative flex flex-col items-center justify-end gap-4 p-4 text-secondary text-center drop-shadow-lg">
@@ -37,10 +38,12 @@ const {cantidad, nombre, precio} = Astro.props;
     </div>
 
     <div class="w-full mb-2">
-        <a href="#" class="block w-full bg-secondary py-3 rounded-md mb-1 text-white">
+        <a
+            href={`https://api.whatsapp.com/send/?phone=7727273403&text=Hola%2C%20me%20comunico%20desde%20el%20sitio%20oficial%20de%20Hulux.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20${nombre}%20de%20%20${cantidad}MB%20por%20favor%3F`}
+            class="block w-full bg-secondary py-3 rounded-md mb-1 text-white">
             Contratar
         </a>
-        <a href="#" class="underline text-[12px] font-light"> Formato simplificado </a>
+        <a href={`/formatos-simplificados/${formatoSimplificado}`} target="_blank" class="underline text-[12px] font-light"> Formato simplificado </a>
     </div>
 
 </article>
