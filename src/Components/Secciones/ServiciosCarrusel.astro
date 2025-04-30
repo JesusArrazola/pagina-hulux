@@ -1,9 +1,11 @@
 ---
 import ServiciosCard from "../ServiciosCard.astro";
 import SliderReutilizable from "../SliderReutilizable.astro";
+import BgContenedor from "../Utilidades/BgContenedor.astro";
 ---
 
-<div class="flex flex-col items-center justify-center bg-secondary py-18 gap-12">
+
+<BgContenedor>
     <h3 class="text-white font-bold text-2xl sm:text-4xl text-center"> Conoce nuestros servicios de internet </h3>
     <!-- Prueba -->
     <SliderReutilizable prefix="t" class_="testimonial" excludeArrows maxWidth={1430}>
@@ -17,4 +19,5 @@ import SliderReutilizable from "../SliderReutilizable.astro";
             <ServiciosCard titulo="Empresarial" texto="Soluciones de internet diseñadas para mantener tu negocio operando a máxima velocidad y eficiencia" />
         </div>
     </SliderReutilizable>
-</div>
+</BgContenedor>
+

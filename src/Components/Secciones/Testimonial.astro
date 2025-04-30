@@ -1,12 +1,15 @@
 ---
 import SliderReutilizable from "../SliderReutilizable.astro";
 import Ttestimonial from "../Testimonial.astro";
+import BgContenedor from "../Utilidades/BgContenedor.astro";
 ---
 
 
 
-<div class="flex flex-col items-center justify-center bg-secondary py-18 gap-12">
+
+    <BgContenedor>
     <h3 class="text-white font-bold text-2xl sm:text-4xl text-center">Lo que opinan nuestros clientes de Hulux</h3>
+    <br>
     <!-- Prueba -->
     <SliderReutilizable prefix="tst" class_="testt" maxWidth={1430}>
         <div class="flex items-center justify-center">
@@ -28,4 +31,4 @@ import Ttestimonial from "../Testimonial.astro";
             <Ttestimonial texto="Soluciones de internet diseñadas para mantener tu negocio operando a máxima velocidad y eficiencia" />
         </div>
     </SliderReutilizable>
-</div>
+</BgContenedor>
