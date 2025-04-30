@@ -1,6 +1,5 @@
 ---
 import Layout from "../Layouts/Layout.astro";
-import img from "../assets/images/services_hero.gif";
 import Hero from "../Components/Hero.astro";
 import CasrruselComponent from "../Components/CasrruselComponent.astro";
 
@@ -22,37 +21,38 @@ import Pasos from "../Components/Secciones/Pasos.astro";
 		subtitle="Ofrecemos paquetes de internet diseñados para satisfacer todas tus necesidades de conectividad, con la confiabilidad y velocidad que mereces."
 	/>
 
-		<CasrruselComponent
+	<CasrruselComponent
 		titulo="Tenemos un plan perfecto para tí"
 		imagenes={[img1,img2,img3,img4]}
 	/>
 
-		<BgContenedor>
-			<a id="residencial"></a>
-			<section class="py-8 text-white relative">
-				<h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center">Servicios <span class="text-tertiary">residenciales</span></h2>
-				<p class="text-center mb-12">
-					Estos paquetes llegan por fibra óptica. Elige el plan que mejor se adapte a tu estilo de vida.
-				</p>
-	
-				<SliderReutilizable class_="residenciales" prefix="sr">
-					<div class="flex items-center justify-center"> 
-						<PlanResidencial  nombre="Básico" cantidad={50} precio={349}/>
-					</div>
-					<div class="flex items-center justify-center">
-						<PlanResidencial nombre="Estándar" cantidad={100} precio={449} />
-					</div>
-					<div class="flex items-center justify-center">
-						<PlanResidencial nombre="Pro" cantidad={200} precio={699}/>
-					</div>
-					<div class="flex items-center justify-center">
-						<PlanResidencial  nombre="Ultra" cantidad={500} precio={999}/>
-					</div>
-				</SliderReutilizable>
-			</section>
-		</BgContenedor>
+	<BgContenedor>
+		<a id="residencial"></a>
+		<section class="py-8 text-white relative">
+			<h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center">Servicios <span class="text-tertiary">residenciales</span></h2>
+			<p class="text-center mb-12">
+				Estos paquetes llegan por fibra óptica. Elige el plan que mejor se adapte a tu estilo de vida.
+			</p>
+
+			<SliderReutilizable class_="residenciales" prefix="sr">
+				<div class="flex items-center justify-center"> 
+					<PlanResidencial  nombre="Básico" cantidad={50} precio={349}/>
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial nombre="Estándar" cantidad={100} precio={449} />
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial nombre="Pro" cantidad={200} precio={699}/>
+				</div>
+				<div class="flex items-center justify-center">
+					<PlanResidencial  nombre="Ultra" cantidad={500} precio={999}/>
+				</div>
+			</SliderReutilizable>
+		</section>
+	</BgContenedor>
 		
-		<Pasos />
+	<Pasos />
+
 	<BgContenedor>
 		<a id="residencial-tv"></a>
 		<section class="py-8 text-white relative">
