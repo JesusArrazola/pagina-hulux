@@ -76,10 +76,14 @@ import AppleBadge from "../../assets/images/Download_on_the_App_Store_Badge_ESMX
             <img src={connect.src} alt="Hulux Connect" class="w-full h-fit">
         </div>
         <div class="flex items-center justify-center gap-12 mb-8">
-            <div class="h-[38px] aspect-auto">
-                <img src={GoogleBadge.src} class="w-full h-full"/>
-            </div>
-            <AppleBadge/>
+            <a href="https://play.google.com/store/apps/details?id=com.mycompany.huluxconnect&hl=es&pli=1" target="_blank">
+                <div class="h-[38px] aspect-auto">
+                    <img src={GoogleBadge.src} class="w-full h-full"/>
+                </div>
+            </a>
+            <a href="https://apps.apple.com/mx/app/hulux-connect/id6473058803" target="_blank">
+                <AppleBadge/>
+            </a>
         </div>
     </div>
 </div>
