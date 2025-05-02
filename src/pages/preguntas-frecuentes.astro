@@ -5,7 +5,7 @@ import dataClientesNuevos from "../data/faq.json";
 import dataClientesServicio from "../data/FAQ/clientesServicio.json";
 import dataHConnect from "../data/FAQ/hConnect.json";
 import Hero from "../Components/Hero.astro";
-import imgHero from "../assets/woman-is-using-phone-2023-11-27-04-52-16-utc.jpg";
+import imgHero from "../../public/preguntas-hero.png";
 import img from "../assets/images/form.png";
 ---
 
@@ -26,7 +26,7 @@ import img from "../assets/images/form.png";
 >
         
         
-        <div class="w-full h-full bg-secondary rounded-lg relative border border-white/20">  <!-- Centrar -->
+        <div class="w-full lg:w-4/5 h-full bg-secondary rounded-lg relative border border-white/20">  <!-- Centrar -->
 
             <!-- Rectangulo + img -->
             <div class="w-1/2 h-full hidden absolute right-0 lg:flex flex-col items-center justify-center">
@@ -55,8 +55,8 @@ import img from "../assets/images/form.png";
                     <img src={img.src} class="lg:hidden max-w-[380px]" alt="Chica Hulux">
                     <form
                         id="form-content"
-                        action=""
-                        method="post"
+                        action="https://formsubmit.co/71fa65f36c5b40ab5317bf609eecb18b"
+                        method="POST"
                         class="opacity-0 -translate-y-10 transition-all duration-700 ease-in-out flex flex-col gap-4 text-white w-full lg:max-w-[520px] max-w-full bg-secondary/40 px-4 py-8"
                     >
                         <h1 class="font-bold text-2xl text-white">Envíanos un mensaje</h1>
@@ -66,7 +66,14 @@ import img from "../assets/images/form.png";
                         </div>
                         <div class="flex flex-col">
                             <label for="telefono">Teléfono</label>
-                            <input class="rounded-lg p-4 border border-white"  type="number" min="0" name="nombre-cliente" id="telefono" required>
+                            <input
+                                class="rounded-lg p-4 border border-white"
+                                type="number"
+                                maxlength="10"
+                                name="telefono-cliente"
+                                id="telefono"
+                                required
+                            >
                         </div>
                         <div class="flex flex-col">
                             <label for="mensaje">Mensaje</label>
@@ -125,3 +132,16 @@ import img from "../assets/images/form.png";
     button!.addEventListener("click", hideForm);
 
 </script>
+<style>
+    /* Para Chrome, Safari, Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
