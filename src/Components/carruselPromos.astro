@@ -1,0 +1,55 @@
+---
+const promociones = [
+  {
+    src: "../assets/Promos/buen_fin.jpg",
+    alt: "Promo Buen fin",
+    link: "/promo/buenfin"
+  },
+  {
+    src: "../assets/Promos/Portafolio_comercial_Timing_Primavera.png",
+    alt: "Promo 3 Meses",
+    link: "/promo/3meses"
+  },
+  {
+    src: "../assets/Promos/promo.png",
+    alt: "Promo 100 Megas",
+    link: "/promo/100megas"
+  }
+];
+---
+
+<div class="relative overflow-hidden w-full max-w-5xl mx-auto">
+  <div class="flex transition-transform ease-in-out duration-500" id="carousel-track">
+    {promociones.map((promo) => (
+      <a href={promo.link} class="min-w-full block">
+        <img
+          src={promo.src}
+          alt={promo.alt}
+          class="w-full h-auto object-cover cursor-pointer"
+        />
+      </a>
+    ))}
+  </div>
+
+  <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-10">
+    ‹
+  </button>
+  <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-10">
+    ›
+  </button>
+
+  <script is:inline>
+    let index = 0;
+    const track = document.getElementById('carousel-track');
+    const slides = track.children;
+
+    function slide(direction) {
+      index = (index + direction + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => slide(-1));
+    document.getElementById('next-btn').addEventListener('click', () => slide(1));
+  </script>
+</div>
+
