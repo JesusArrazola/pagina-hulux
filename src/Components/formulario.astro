@@ -65,17 +65,17 @@ const municipioLocalidades = {
             <option value="Actopan">Actopan, centro</option>
           </select>
 
-          <input type="text" placeholder="Dirección" name="direccion" class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+          <input type="text" placeholder="Dirección" name="direccion" required class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
         </div>
 
         <div class="flex flex-wrap gap-4">
-          <select class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="motivo">
+          <select required class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="motivo">
             <option value="">Motivo de consulta*</option>
             <option value="servicio">Contratar servicio</option>
             <option value="soporte">Soporte técnico</option>
           </select>
 
-          <select class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="metodoContacto">
+          <select required class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="metodoContacto">
             <option value="">¿Cómo prefiere ser contactado?</option>
             <option value="telefono">Teléfono</option>
             <option value="correo">Correo electrónico</option>
