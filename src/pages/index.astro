@@ -5,8 +5,8 @@ import Highlights from "../Components/Highlights.astro";
 import Formulario from "../Components/formulario.astro";
 import ContenedorReusable from "../Components/ContenedorReusable.astro";
 import CasrruselComponent from "../Components/CasrruselComponent.astro";
-import ServiciosCard from "../Components/ServiciosCard.astro";
-import SliderReutilizable from "../Components/SliderReutilizable.astro";
+import Hero from "../Components/Hero.astro";
+import img from "../assets/Purple-and-Pink-Pastel-Simple-Modern-Payment-Mobile-App-Presentation-1.gif"
 
 //Imagenes
 import img1 from "../assets/Entretenimiento_hulux.png";
@@ -25,7 +25,43 @@ import AppSeccion from "../Components/Secciones/AppSeccion.astro";
 ---
 
 <Layout>
-	<Contenedor />
+	<Hero 
+  title="El internet más confiable y además veloz." 
+  subtitle="Conectamos con las cosas que importan, impulsando experiencias confiables y de alta velocidad" 
+  bgImage={img}
+  showSlot={true}
+>
+  <div class="boton-servicios-wrapper">
+    <a href="/servicios" class="boton-servicios">Ver más</a>
+  </div>
+</Hero>
+
+<style>
+  .boton-servicios-wrapper {
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+  }
+
+  .boton-servicios {
+    background-color: #ff5722;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 9999px; /* más redondeado como el ejemplo */
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    width: auto; /* tamaño justo al contenido */
+  }
+
+  .boton-servicios:hover {
+    background-color: #15294f;
+  }
+</style>
+
 	<ContenedorReusable />
 	<Highlights />	
 	<ServiciosCarrusel />
