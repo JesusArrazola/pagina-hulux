@@ -32,8 +32,23 @@ const municipioLocalidades = {
         </div>
 
         <div class="flex flex-wrap gap-4">
-          <input type="tel" name="telefono" placeholder="Teléfono*" required class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
-          <input type="tel" placeholder="Teléfono adicional" class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+          <input type="tel" 
+          name="telefono" 
+          placeholder="Teléfono*" 
+          required 
+          maxlength="10" 
+          inputmode="numeric"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          onkeypress="if (event.key < '0' || event.key > '9') event.preventDefault();"
+          class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
+          <input type="tel" 
+          name="telefono_adicional"
+          placeholder="Teléfono adicional" 
+          maxlength="10" 
+          inputmode="numeric"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          onkeypress="if (event.key < '0' || event.key > '9') event.preventDefault();"
+          class="bg-white flex-1 p-3 rounded-lg text-black text-base" />
         </div>
 
         <div class="flex flex-wrap gap-4">
