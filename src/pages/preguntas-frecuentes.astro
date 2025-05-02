@@ -5,11 +5,123 @@ import dataClientesNuevos from "../data/faq.json";
 import dataClientesServicio from "../data/FAQ/clientesServicio.json";
 import dataHConnect from "../data/FAQ/hConnect.json";
 import Hero from "../Components/Hero.astro";
+
+import img from "../assets/images/form.png";
 ---
 
 <Layout>
-    <Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center/>
+    <Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center showSlot>
+        <div id="help-button" class="rounded-2xl border border-white px-4 py-2 mt-4 cursor-pointer">
+            ¿En qué te ayudo?
+        </div>
+    </Hero>
     <FAQ title="Clientes nuevos" data={dataClientesNuevos}/>
     <FAQ title="Clientes con nuestro servicio" data={dataClientesServicio}/>
     <FAQ title="Hulux Connect" data={dataHConnect}/>
+
+    <!-- Form envíar mensaje -->
+    <div
+  id="form"
+  class="opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out fixed top-0 left-0 w-full h-dvh z-30 bg-secondary/20 flex items-center justify-center"
+>
+        
+        
+        <div class="w-full h-full bg-secondary rounded-lg relative border border-white/20">  <!-- Centrar -->
+
+            <!-- Rectangulo + img -->
+            <div class="w-1/2 h-full hidden absolute right-0 lg:flex flex-col items-center justify-center">
+                <div class="w-44 h-full bg-primary absolute right-1/2 translate-x-1/2"></div>
+                <img
+                    id="hero-img"
+                    src={img.src}
+                    class="z-40 opacity-0 -translate-y-10 transition-all duration-700 ease-in-out"
+                    alt="Chica Hulux"
+                />
+            </div>
+
+            <!-- Close button  -->
+            <div  class="flex flex-col justify-start h-full p-8">
+                <div class="flex items-center justify-start w-full text-tertiary">
+                    <div class="cursor-pointer" id="close-btn">
+                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" stroke-width="2">
+                            <path d="M18 6l-12 12"></path>
+                            <path d="M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="w-full h-full flex flex-col items-center lg:items-start justify-center z-50">
+                    <img src={img.src} class="lg:hidden max-w-[380px]" alt="Chica Hulux">
+                    <form
+                        id="form-content"
+                        action=""
+                        method="post"
+                        class="opacity-0 -translate-y-10 transition-all duration-700 ease-in-out flex flex-col gap-4 text-white w-full lg:max-w-[520px] max-w-full bg-secondary/40 px-4 py-8"
+                    >
+                        <h1 class="font-bold text-2xl text-white">Envíanos un mensaje</h1>
+                        <div class="flex flex-col">
+                            <label for="nombre">Nombre</label>
+                            <input class="rounded-lg p-4 border border-white"  type="text" name="nombre-cliente" id="nombre" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="telefono">Teléfono</label>
+                            <input class="rounded-lg p-4 border border-white"  type="number" min="0" name="nombre-cliente" id="telefono" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea  class="rounded-lg p-4 border border-white" name="mensaje" id="mensaje">
+                            </textarea>
+                        </div>
+                        <input type="submit" value="Enviar" class="rounded-lg px-4 py-2 text-white bg-primary">
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+        
+    </div>
+
+
 </Layout>
+<script>
+
+    const button = document.querySelector("#close-btn");
+    const form = document.querySelector("#form");
+    const help = document.querySelector("#help-button");
+    const img = document.querySelector("#hero-img");
+    const ffform = document.querySelector("#ffform");
+
+    const hideForm = () => {
+        form!.classList.remove("opacity-100", "pointer-events-auto");
+        form!.classList.add("opacity-0", "pointer-events-none");
+
+        const img = document.querySelector("#hero-img");
+        img?.classList.remove("opacity-100", "translate-y-0");
+        img?.classList.add("opacity-0", "-translate-y-10");
+
+        const formContent = document.querySelector("#form-content");
+        formContent?.classList.remove("opacity-100", "translate-y-0");
+        formContent?.classList.add("opacity-0", "-translate-y-10");
+    };
+
+    const showForm = () => {
+        form!.classList.remove("opacity-0", "pointer-events-none");
+        form!.classList.add("opacity-100", "pointer-events-auto");
+
+        const img = document.querySelector("#hero-img");
+        img?.classList.remove("opacity-0", "-translate-y-10");
+        img?.classList.add("opacity-100", "translate-y-0");
+
+        const formContent = document.querySelector("#form-content");
+        formContent?.classList.remove("opacity-0", "-translate-y-10");
+        formContent?.classList.add("opacity-100", "translate-y-0");
+    };
+
+    help!.addEventListener("click", showForm);
+
+    button!.addEventListener("click", hideForm);
+
+</script>

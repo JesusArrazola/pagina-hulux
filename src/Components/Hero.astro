@@ -5,9 +5,10 @@ interface Props {
   bgImage?: ImageMetadata;
   title: string;
   subtitle: string;
+  showSlot?: boolean;
 }
 
-let { center = false, bgImage, title, subtitle } = Astro.props;
+let { center = false, bgImage, title, subtitle, showSlot=false } = Astro.props;
 const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
 ---
 <div
@@ -31,6 +32,10 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
     <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
       {subtitle}
     </p>
+    { 
+
+      showSlot &&  <slot />
+    }
   </div>
 </div>
 
