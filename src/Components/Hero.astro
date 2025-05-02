@@ -12,6 +12,7 @@ let { center = false, bgImage, title, subtitle, showSlot=false } = Astro.props;
 const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
 ---
 <div
+  id="top"
   class:list={[
   "hero h-[50vh] lg:h-[85vh] max-h-[780px] relative text-white",
   !center && "px-6 sm:px-9 lg:px-16"

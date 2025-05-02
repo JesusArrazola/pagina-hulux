@@ -5,12 +5,12 @@ import dataClientesNuevos from "../data/faq.json";
 import dataClientesServicio from "../data/FAQ/clientesServicio.json";
 import dataHConnect from "../data/FAQ/hConnect.json";
 import Hero from "../Components/Hero.astro";
-
+import imgHero from "../assets/woman-is-using-phone-2023-11-27-04-52-16-utc.jpg";
 import img from "../assets/images/form.png";
 ---
 
 <Layout>
-    <Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center showSlot>
+    <Hero title="Centro de ayuda" subtitle="Aquí te damos respuestas" center showSlot bgImage={imgHero}>
         <div id="help-button" class="rounded-2xl border border-white px-4 py-2 mt-4 cursor-pointer">
             ¿En qué te ayudo?
         </div>

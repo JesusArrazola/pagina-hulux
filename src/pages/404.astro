@@ -1,11 +1,15 @@
 ---
+import Logo from "../Components/Logo.astro"
 import Layout from "../Layouts/Layout.astro"
 ---
 
 <Layout>
-        <div class="full bg-secondary w-full flex flex-col items-center justify-center">
-            <p class="font-bold text-2xl text-white">404</p>
-            
+        <div class="full bg-secondary w-full flex flex-col items-center justify-center text-white gap-4">
+            <Logo />
+            <p class="font-bold text-2xl text-white">Error 404</p>
+            <p>¡Lo sentimos! Esta página no existe</p>
+            <a href="/" class="text-tertiary underline">Volver al inicio</a>
+
         </div>
 
 </Layout>

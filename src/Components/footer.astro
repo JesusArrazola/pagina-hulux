@@ -9,6 +9,8 @@ import Envelope from "../assets/icons/envelope.svg";
 import Phone from "../assets/icons/phone.svg"
 import WhatsAppIcon from "../assets/icons/whatsappIcon.svg"
 import Padding from "./Utilidades/Padding.astro";
+
+const path = Astro.url.pathname;
 ---
 
 <Padding bg>
@@ -22,7 +24,7 @@ import Padding from "./Utilidades/Padding.astro";
                 <ul class="text-secondary-text flex flex-col gap-5">
                     <li class="hover:underline"><a href="/nosotros">¿Quiénes somos?</a></li>
                     <li class="hover:underline"><a href="https://usuarios.hulux.mx/cliente/login">Portal del cliente</a></li>
-                    <li class="hover:underline"><a href="/avisoprivacidad">Aviso de privacidad</a></li>
+                    <li class="hover:underline"><a href="/legal">Legal</a></li>
                 </ul>
             </div>
     
@@ -109,7 +111,7 @@ import Padding from "./Utilidades/Padding.astro";
                 </nav>
             </div>
     
-            <a class="p-4 rounded-md hover:bg-secondary-text" href="#top">
+            <a class="p-4 rounded-md hover:bg-secondary-text" href={path}>
                 <ChevronUp/>
             </a>
         </section>
