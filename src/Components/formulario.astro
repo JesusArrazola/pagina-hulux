@@ -4,16 +4,22 @@ import BgContenedor from "./Utilidades/BgContenedor.astro";
 const municipioLocalidades = {
   otro: [""],
   ajacuba: ["Centro", "Santiago Tezontlale"],
-  santiago: ["Centro", "Cerritos", "El jaguey"],
-  actopan: ["La Estancia", "El Daxtha", "El Cerrito"],
-  tepa: ["La Estancia", "El Daxtha", "El Cerrito"],
-  progreso: ["La Estancia", "El Daxtha", "El Cerrito"],
-  atita: ["La Estancia", "El Daxtha", "El Cerrito"],
-  huichapan: ["La Estancia", "El Daxtha", "El Cerrito"],
-  arenal: ["La Estancia", "El Daxtha", "El Cerrito"],
-  salvador: ["La Estancia", "El Daxtha", "El Cerrito"],
-  tetepango: ["La Estancia", "El Daxtha", "El Cerrito"],
-  mixquiahuala: ["La Estancia", "El Daxtha", "El Cerrito"]
+  santiago: ["Centro", "Cerritos", "El jaguey", "El porvenir", "Gonzales Ortega", "Guerrero",
+    "Hermosillo", "Lagunilla", "Patria Nueva", "Santa Mónica", "Yolotepec", "Zaragoza"],
+  actopan: ["Actopan Centro", "Bothibaji", "Boxaxni", "Boxtha", "Calle María del Carmen Goznález", "Canguihuindo", "Carretera Tianguis", "Cañada Aviación",
+    "Cañada Chica/Los Olivos", "Cañada Chica Antigua", "Chicavasco", "Col. Cuahutémoc/Huaxtho", "Col. El Cerrito", "Col. Guadalupe", "Dajiedhi (Hacia Guzmán Mayer",
+  "Dajiedhi Centro", "Daxtha", "Dos Cerritos", "El Meje", "El Palomo", "Fraccionamiento Parque Recreativo", "Fundición", "Guzmán Mayer", "Huaxtho", "La Estancia", "La Loma",
+"La Peña", "Parque Urbano", "Pozo Grande", "Santa María Magdalena", "Unidad Deportiva", "Xideje (La Estancia)"],
+  tepa: ["Col. Lázaro Cardenas", "El Rosario", "La Palma", "San Juan Tepa", "Tepatepec", "Unidad Magisterial"],
+  progreso: ["Centro", "Colonia Morelos", "Colonia Veracruz", "Jaguey Blanco"],
+  atita: ["Cardonal", "Centro", "Colonia Dendho", "Dendho", "Tezoquipa", "Tiamaco"],
+  huichapan: ["Centro", "La sabinita", "Mamithi", "Rojo Goméz", "San José Atlán"],
+  arenal: ["Centro", "Colonia 20 de Noviembre", "El Jiadi", "El Rincón", "Ojo de agua", "San José Tepenene"],
+  salvador: ["Bocaja", "Bomintzha", "Casa Grande", "Caxuxi", "Cañada Grande", "Cerro Pacheco", "Colorado Santa María", "Demacú", "Dengandhó", "Dexthó de Victoria", "El Bondho",
+    "El Durazno", "El Olvera", "El puerto Lázaro Cárdenas", "El Rodrigo", "El Tablón", "El Vixtha", "Fracc. Media Luna", "Leonardo Valle", "Pacheco de Rojo Gómez", "Poxindeje",
+  "San Antonio Zaragoza", "San Miguel Acambay", "San Salvador", "Santa María Amajac", "Teofani", "Tothie"],
+  tetepango: ["Centro", "Juandho", "Niño Perdido", "Uluapa", "Xitri"],
+  mixquiahuala: ["Carrilo Puerto", "Cañada", "Col. Morelos", "Col. Veracruz", "El Bondho", "Mixquiahuala Centro", "Motobatha", "Palmillas", "Taxhuada", "Teñhe", "Árbol Grande"]
 } as Record<'otro' | 'actopan' | 'santiago' | 'ajacuba' | 'tepa' | 'progreso' | 
 'atita' | 'huichapan' | 'arenal' | 'salvador' | 'tetepango' | 'mixquiahuala', string[]>;
 ---
@@ -86,14 +92,17 @@ const municipioLocalidades = {
         <div class="flex flex-wrap gap-4">
           <select class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="motivo">
             <option value="">Motivo de consulta*</option>
-            <option value="servicio">Contratar servicio</option>
+            <option value="servicio_recidencial">Servicios recidenciales</option>
+            <option value="servicio_recidencia_+TV">Servicios recidenciales + Hulux TV</option>
             <option value="soporte">Soporte técnico</option>
+            <option value="servicio_empresarial">Servicio empresarial</option>
+            <option value="dedicado">Dedicado</option>
           </select>
 
           <select class="bg-white flex-1 p-3 rounded-lg text-black text-base" name="metodoContacto">
             <option value="">¿Cómo prefiere ser contactado?</option>
-            <option value="telefono">Teléfono</option>
-            <option value="correo">Correo electrónico</option>
+            <option value="telefono">Llamada telfónica</option>
+            <option value="correo">Mensaje de WhatssApp</option>
           </select>
         </div>
 
@@ -110,16 +119,22 @@ const municipioLocalidades = {
     const municipioLocalidades = {
       otro: [""],
       ajacuba: ["Centro", "Santiago Tezontlale"],
-      santiago: ["Centro", "Cerritos", "El jaguey"],
-      actopan: ["La Estancia", "El Daxtha", "El Cerrito"],
-      tepa: ["La Estancia", "El Daxtha", "El Cerrito"],
-      progreso: ["La Estancia", "El Daxtha", "El Cerrito"],
-      atita: ["La Estancia", "El Daxtha", "El Cerrito"],
-      huichapan: ["La Estancia", "El Daxtha", "El Cerrito"],
-      arenal: ["La Estancia", "El Daxtha", "El Cerrito"],
-      salvador: ["La Estancia", "El Daxtha", "El Cerrito"],
-      tetepango: ["La Estancia", "El Daxtha", "El Cerrito"],
-      mixquiahuala: ["La Estancia", "El Daxtha", "El Cerrito"]
+      santiago: ["Centro", "Cerritos", "El jaguey", "El porvenir", "Gonzales Ortega", "Guerrero",
+    "Hermosillo", "Lagunilla", "Patria Nueva", "Santa Mónica", "Yolotepec", "Zaragoza"],
+      actopan: ["Actopan Centro", "Bothibaji", "Boxaxni", "Boxtha", "Calle María del Carmen Goznález", "Canguihuindo", "Carretera Tianguis", "Cañada Aviación",
+    "Cañada Chica/Los Olivos", "Cañada Chica Antigua", "Chicavasco", "Col. Cuahutémoc/Huaxtho", "Col. El Cerrito", "Col. Guadalupe", "Dajiedhi (Hacia Guzmán Mayer",
+  "Dajiedhi Centro", "Daxtha", "Dos Cerritos", "El Meje", "El Palomo", "Fraccionamiento Parque Recreativo", "Fundición", "Guzmán Mayer", "Huaxtho", "La Estancia", "La Loma",
+"La Peña", "Parque Urbano", "Pozo Grande", "Santa María Magdalena", "Unidad Deportiva", "Xideje (La Estancia)"],
+      tepa: ["Col. Lázaro Cardenas", "El Rosario", "La Palma", "San Juan Tepa", "Tepatepec", "Unidad Magisterial"],
+      progreso: ["Centro", "Colonia Morelos", "Colonia Veracruz", "Jaguey Blanco"],
+      atita: ["Cardonal", "Centro", "Colonia Dendho", "Dendho", "Tezoquipa", "Tiamaco"],
+      huichapan: ["Centro", "La sabinita", "Mamithi", "Rojo Goméz", "San José Atlán"],
+      arenal: ["Centro", "Colonia 20 de Noviembre", "El Jiadi", "El Rincón", "Ojo de agua", "San José Tepenene"],
+      salvador: ["Bocaja", "Bomintzha", "Casa Grande", "Caxuxi", "Cañada Grande", "Cerro Pacheco", "Colorado Santa María", "Demacú", "Dengandhó", "Dexthó de Victoria", "El Bondho",
+    "El Durazno", "El Olvera", "El puerto Lázaro Cárdenas", "El Rodrigo", "El Tablón", "El Vixtha", "Fracc. Media Luna", "Leonardo Valle", "Pacheco de Rojo Gómez", "Poxindeje",
+  "San Antonio Zaragoza", "San Miguel Acambay", "San Salvador", "Santa María Amajac", "Teofani", "Tothie"],
+      tetepango: ["Centro", "Juandho", "Niño Perdido", "Uluapa", "Xitri"],
+      mixquiahuala: ["Carrilo Puerto", "Cañada", "Col. Morelos", "Col. Veracruz", "El Bondho", "Mixquiahuala Centro", "Motobatha", "Palmillas", "Taxhuada", "Teñhe", "Árbol Grande"]
     };
 
     const municipioSelect = document.getElementById("municipio");
