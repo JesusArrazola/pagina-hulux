@@ -9,7 +9,7 @@ import Footer from '../Components/footer.astro';
 let path = Astro.url.pathname;
 const normalizedPath = (!path.endsWith("/") && path !== "/") ? `${path}/` : path;
 
-const solidPaths: string[] = ["/avisoprivacidad/","/legal/"];
+const solidPaths: string[] = ["/avisoprivacidad/","/legal/","/eliminardatos/"];
 
 const solid = solidPaths.includes(normalizedPath);
 console.log(path,solid);

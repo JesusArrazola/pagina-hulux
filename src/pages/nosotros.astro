@@ -9,6 +9,13 @@ import SeparadorNaranja from "../Components/separadorNaranja.astro";
 import Vision from "../Components/vision.astro";
 import Valores from "../Components/valores.astro";
 import CarruselHulux from "../Components/carruselHulux.astro";
+
+//Imagenes
+import img1 from "../assets/Entretenimiento_hulux.png";
+import img2 from "../assets/Estudiando_con_hulux.png";
+import img3 from "../assets/Trabajando_con_hulux.png";
+import img4 from "../assets/Carr_2.4.png";
+import CasrruselComponent from "../Components/CasrruselComponent.astro";
 ---
 
 <Layout>
@@ -22,6 +29,9 @@ import CarruselHulux from "../Components/carruselHulux.astro";
     <SeparadorNaranja/>
     <Vision />
     <Valores />
-	<CarruselHulux />
+    <CasrruselComponent
+    titulo="Conexiones que importan"
+    imagenes={[img1,img2,img3,img4]}
+/>	
   
 </Layout>

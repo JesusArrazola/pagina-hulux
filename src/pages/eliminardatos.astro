@@ -1,0 +1,31 @@
+---
+import Layout from "../Layouts/Layout.astro";
+---
+
+<Layout>
+    <section class="mt-18 bg-secondary flex flex-col text-white items-center justify-center p-8">
+        <p class="text-white"> Eliminar mis datos de usuario </p>
+        <br>
+        <form>
+            <input class="border border-white p-2 rounded-md" type="text" name="cel" id="0" placeholder="Número de teléfono" maxlength="10">
+            <br><br>
+            <input class="border border-white p-2 rounded-md" type="password" name="cel" id="0" placeholder="Contraseña">
+        </form>
+        <br><br>
+        <p class="text-tertiary">
+            Deseo que mis datos sean eliminados del sistema
+        </p>
+        <br>
+        <br>
+        <button id="btttn" class="bg-primary text-white py-3 px-6 rounded-md cursor-pointer">Eliminar datos</button>
+    </section>
+</Layout>
+<script>
+    const btn = document.querySelector("#btttn");
+    function alertar(){
+        window.alert("Sus datos fueron eliminados con éxito!");
+        location.href = "/";
+    }
+    
+    btn!.addEventListener("click",alertar);
+</script>
