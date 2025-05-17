@@ -21,7 +21,9 @@ import CasrruselComponent from "../Components/CasrruselComponent.astro";
 <Layout>
 	<Hero 
 	title="Nosotros" 
-	subtitle="En Hulux, somos lideres en telecomunicaciones de alta calidad y tecnología avanzada, con mas de 12 años de experiencia en el mercado" bgImage={img}/>
+	subtitle={""} bgImage={img}
+    year
+    />
 	<HistoriaHulux />
     <SeparadorNaranja />
     <HitosHulux />
@@ -35,3 +37,12 @@ import CasrruselComponent from "../Components/CasrruselComponent.astro";
 />	
   
 </Layout>
+
+<script>
+    const hoy = new Date();
+    const fundacion = new Date("2011-08-30T00:00:00");
+
+    const años = hoy.getFullYear() - fundacion.getFullYear()
+    const year = document.querySelector(".year");
+    year!.textContent = `${años}`;
+</script>

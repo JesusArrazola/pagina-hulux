@@ -6,15 +6,15 @@ interface Props {
   title: string;
   subtitle: string;
   showSlot?: boolean;
+  year?: boolean;
 }
 
-let { center = false, bgImage, title, subtitle, showSlot=false } = Astro.props;
-const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
+let { center = false, bgImage, title, subtitle, showSlot=false, year = false } = Astro.props;
 ---
 <div
   id="top"
   class:list={[
-  "hero h-[50vh] lg:h-[85vh] max-h-[780px] relative text-white",
+  "hero h-[80vh] lg:h-[85vh] max-h-[780px] relative text-white",
   !center && "px-6 sm:px-9 lg:px-16"
   ]}
   style={`background-image: url(${bgImage?.src || "/server.gif"})`}
@@ -30,13 +30,33 @@ const mobileTopMargin = subtitle.length > 40 ? 131 : 191;
   ]}
   >
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">{title}</h1>
-    <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
+    
+      {!year && <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
       {subtitle}
-    </p>
+    </p>}
+      {year && <p class:list={["sm:text-xl lg:text-3xl max-w-[80%]", center && "text-center"]}>
+        En Hulux, somos lideres en telecomunicaciones de alta calidad y tecnología avanzada, con mas de <span class="year"></span> años de experiencia en el mercado
+      </p> }
     { 
 
       showSlot &&  <slot />
     }
+  </div>
+  <div class="absolute bottom-2 left-1/2 text-tertiary">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 9l6 6l6 -6" />
+    </svg>
+
   </div>
 </div>
 

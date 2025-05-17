@@ -23,45 +23,17 @@ console.log(path,solid);
 		<meta name="generator" content={Astro.generator} />
 		<title>Hulux Telecomunicaciones | Contrata Internet de alta velocidad</title>
 
-		<!-- Facebook Pixel Code -->
-		<script set:html={`
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '996134048561563');
-			fbq('track', 'PageView');
-			`}></script>
-		<!-- End Facebook Pixel Code -->
-
 		<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
 	</head>
 	<body>
-		<!-- Facebook Pixel NoScript -->
-		<noscript>
-			<img height="1" width="1" style="display:none"
-			src="https://www.facebook.com/tr?id=996134048561563&ev=PageView&noscript=1" />
-		</noscript>
-		<!-- End Facebook Pixel NoScript -->
 
 		<div id="top" class="hidden"></div>
         <Header solid={solid}></Header>
         <slot />
-		
-		<!-- Botón de whatsapp -->
-		<div class="bg-green-600 fixed bottom-0 right-0 m-4 rounded-full p-2">
-			<a href="https://api.whatsapp.com/send/?phone=7727273403" target="_blank" role="button">
-				<Image src={img} alt={"WhatssApp chat Icon"}/>
-			</a>
-		</div>
-
 		<SubMenu />
 		<Footer/>
 		<script type="module" src="/js/glider-init.js"></script>
+		<!-- <script id="respondio__widget" src="https://cdn.respond.io/webchat/widget/widget.js?cId=e87eb5fa73e05c394bd65c1f26ed9db"></script> -->
 	</body>
 </html>

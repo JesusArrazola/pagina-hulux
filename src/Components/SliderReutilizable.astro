@@ -8,9 +8,10 @@ interface Props {
     excludeArrows?: boolean;
     excludeDots?: boolean;
     maxWidth?: number;
+    arrowStyle?: string;
 }
 
-const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro.props;
+const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth,arrowStyle = false} = Astro.props;
 ---
 
 <div class:list={["glider-contain relative",maxWidth && `max-w-[${maxWidth}px]`]}>
@@ -31,7 +32,7 @@ const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro
                         aria-label="Previous"
                         class={`${prefix}-glider-prev  relative sm:absolute top-1/2 -translate-y-1/2 left-0 2xl:hidden`}
                     >
-                <ChevronLeft class={"hover:cursor-pointer"}/> 
+                <ChevronLeft class:list={["cursor-pointer",arrowStyle]}/> 
                 </button>
             }
 
@@ -45,7 +46,7 @@ const {class_, prefix, excludeArrows=false, excludeDots=false, maxWidth} = Astro
                     aria-label="Next"
                     class={`${prefix}-glider-next relative sm:absolute top-1/2 -translate-y-1/2 right-0 2xl:hidden`}
                 >
-                    <ChevronRight  class:list={"cursor-pointer"}/>
+                    <ChevronRight  class:list={["cursor-pointer",arrowStyle]}/>
                 </button>
             }
         </div>

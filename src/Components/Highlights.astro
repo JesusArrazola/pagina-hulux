@@ -36,7 +36,10 @@
 
     const elemento = document.querySelector('#hl-animation');
     const animables = document.getElementsByClassName("animable");
-    const values = [2,80];
+    const hoy = new Date();
+    const fundacion = new Date("2011-08-30T00:00:00");
+    const años = hoy.getFullYear() - fundacion.getFullYear() - 10;
+    const values = [años,80];
     const numerosCuentaYears = 10;
     const numerosCuentaProjects = 20;
     let played = false;

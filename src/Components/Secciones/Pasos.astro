@@ -1,63 +1,49 @@
 ---
 import Padding from "../Utilidades/Padding.astro";
-import pasosImg from "../../assets/images/pasos_contratacion.png"
+import pasosImg from "../../assets/images/pasos.png"
+import SliderReutilizable from "../SliderReutilizable.astro";
+import PlanResidencial from "../PlanResidencial.astro";
 ---
 
-<section class="py-16 relative text-xs">
+<section class="py-32 relative text-xs">
     <Padding>
-        <h2 class="font-bold text-2xl sm:text-4xl mb-12 text-center text-secondary">Pasos para<span class="text-primary"> contratar</span></h2>
-        <div class="flex items-center justify-around gap-2 mx-auto mb-4">
-            <div class="max-w-[320px] text-center">
-                <header class="font-bold text-primary mb-4">
-                    1. Envíanos tu ubicación
-                </header>
-                <p>
-                    A través de whatsapp para verificar la cobertura en tu zona
-                </p>
-            </div>
-            <div class="max-w-[320px] text-center">
-                <header class="font-bold text-primary mb-4">
-                    3. Envíanos tus documentos
-                </header>
-                <p>
-                    para la contratación. <br> (Identificación oficial y comprobante de domicilio)
-                </p>
-            </div>
-            <div class="max-w-[320px] text-center">
-                <header class="font-bold text-primary mb-4">
-                    4. Indícanos el día y la hora
-                </header>
-                <p>
-                    para que acudamos a realizar tu instalación
-                </p>
-            </div>
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-secondary text-3xl font-bold text-center"> Pasos para <span class="text-primary">contratar</span></h2>
+
+            
+
+			<SliderReutilizable class_="pasos" prefix="ps" arrowStyle="text-primary" excludeArrows>
+                <div class="text-2xl my-8 text-center">
+                    <p class="text-secondary mb-4 font-bold"> 1. Envíanos tu ubicación  </p>
+                    <p>
+                        Puedes hacerlo a través de whatsapp para verificar la cobertura en tu zona
+                    </p>
+                </div>
+                <div class="text-2xl my-8">
+                    <p class="text-secondary text-center mb-4 font-bold"> 1. Envíanos tu ubicación  </p>
+                    <p>
+                        Puedes hacerlo a través de whatsapp para verificar la cobertura en tu zona
+                    </p>
+                </div>
+                <div class="text-2xl my-8">
+                    <p class="text-secondary text-center mb-4 font-bold"> 1. Envíanos tu ubicación  </p>
+                    <p>
+                        Puedes hacerlo a través de whatsapp para verificar la cobertura en tu zona
+                    </p>
+                </div>
+			</SliderReutilizable>
         </div>
-        <div class="w-[80%] mx-auto">
+        <div class="w-[80%] mx-auto mb-16">
             <img src={pasosImg.src} alt="Pasos contratación">
         </div>
-        <div class="flex items-center justify-center gap-12 mx-auto mb-12">
-            <div class="max-w-[320px] text-center">
-                <header class="font-bold text-primary mb-4">
-                    2. Elige el paquete
-                </header>
-                <p>
-                    que más se adapte a tus necesidades
-                </p>
-            </div>
-            <div class="max-w-[320px] text-center">
-                <header class="font-bold text-primary mb-4">
-                    5. Firma tu contrato
-                </header>
-                <p>
-                    Puedes hacerlo de manera física o digital.
-                </p>
-            </div>
-        </div>
-        <p class="text-secondary text-center text-base mb-8">
+        <p class="text-secondary text-center text-base md:text-xl mb-8">
             ¡También puedes saber si tenemos cobertura en tu zona a través de nuestra app <span class="text-primary underline">Hulux Connect</span>!
         </p>
         <div class="w-full">
-            <a class="block mx-auto w-32 py-3 text-center font-bold bg-tertiary text-secondary rounded-md" href="https://api.whatsapp.com/send/?phone=7727273403&text=Hola%20los%20contacto%20desde%20el%20sitio%20oficial%20de%20Hulux%20Telecomunicaciones,%20estoy%20interesado%20en%20contratar%20su%20servicio"> ¡Contrata Ahora! </a>
+            <a class="block mx-auto w-32 md:w-48 py-3 text-center font-bold bg-tertiary text-secondary rounded-md md:text-xl" href="https://api.whatsapp.com/send/?phone=7727273403&text=Hola%20los%20contacto%20desde%20el%20sitio%20oficial%20de%20Hulux%20Telecomunicaciones,%20estoy%20interesado%20en%20contratar%20su%20servicio"> ¡Contrata Ahora! </a>
         </div>
     </Padding>
 </section>
+<script>
+
+</script>

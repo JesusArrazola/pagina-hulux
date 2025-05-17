@@ -1,136 +1,144 @@
 ---
 import Logo from "./Logo.astro";
 
-interface Props{
-    solid?: boolean
+interface Props {
+  solid?: boolean;
 }
 
-const {solid = false} = Astro.props;
+const { solid = false } = Astro.props;
 const path = Astro.url.pathname;
 const normalizedPath = (!path.endsWith("/") && path !== "/") ? `${path}/` : path;
 ---
-<header class:list={["z-20 py-6 xl:py-8 px-6 sm:px-9 lg:px-16 flex items-center justify-between fixed w-full top-0 transition-colors",solid && "solid"]}>
 
-     <Logo classList={"transition-opacity duration-200"}/>
+<header
+  class:list={[
+    "z-20 py-6 xl:py-8 px-6 sm:px-9 lg:px-16 flex items-center justify-between fixed w-full top-0 transition-colors",
+    solid && "solid"
+  ]}
+>
+  <Logo classList="transition-opacity duration-200" />
 
-    <nav class="hidden xl:flex gap-5 text-white text-lg items-center">
-        <a
-            class:list={[
-                            "py-2 px-5 border-b border-transparent",
-                            normalizedPath === "/" && "border-b-2 border-b-primary",
-                        ]}
-                        href="/"
-        >   
-            Inicio
-        </a>
+  <nav class="hidden md:flex gap-5 text-white text-lg items-center">
+    <a
+      href="/"
+      class:list={[
+        "py-2 px-5 border-b border-transparent",
+        normalizedPath === "/" && "border-b-2 border-b-primary"
+      ]}
+    >
+      Inicio
+    </a>
 
-        <a
-            class:list={[
-                            "py-2 px-5 border-b border-transparent",
-                            normalizedPath === "/nosotros/" && "border-b-2 border-b-primary",
-                        ]}
-                        href="/nosotros"
-        >   
-            Nosotros
-        </a>
+    <a
+      href="/nosotros"
+      class:list={[
+        "py-2 px-5 border-b border-transparent",
+        normalizedPath === "/nosotros/" && "border-b-2 border-b-primary"
+      ]}
+    >
+      Nosotros
+    </a>
 
-        <a
-            class:list={[
-                            "py-2 px-5 border-b border-transparent",
-                            normalizedPath === "/servicios/" && "border-b-2 border-b-primary",
-                        ]}
-                        href="/servicios"
-        >   
-            Servicios
-        </a>
+    <a
+      href="/servicios"
+      class:list={[
+        "py-2 px-5 border-b border-transparent",
+        normalizedPath === "/servicios/" && "border-b-2 border-b-primary"
+      ]}
+    >
+      Servicios
+    </a>
 
-        <a
-            class:list={[
-                            "py-2 px-5 border-b border-transparent",
-                            normalizedPath === "/contactanos/" && "border-b-2 border-b-primary",
-                        ]}
-                        href="/contactanos"
-        >   
-            Contáctanos
-        </a>
+    <a
+      href="/contactanos"
+      class:list={[
+        "py-2 px-5 border-b border-transparent",
+        normalizedPath === "/contactanos/" && "border-b-2 border-b-primary"
+      ]}
+    >
+      Contáctanos
+    </a>
 
-        <a class="py-2 px-5 rounded-sm bg-tertiary hover:bg-secondary text-secondary hover:text-tertiary" href="https://api.whatsapp.com/send/?phone=7727273403&text=Hola%20los%20contacto%20desde%20el%20sitio%20oficial%20de%20Hulux%20Telecomunicaciones,%20estoy%20interesado%20en%20contratar%20su%20servicio">Contratar</a>
-    </nav>
-    
-    <div class="menu-toggle block xl:hidden" id="button" >
-        <svg viewBox="0 0 100 100" width="32" height="32">
-            <rect class="line top" width="80" height="10" x="10" y="25" rx="2" />
-            <rect class="line middle" width="80" height="10" x="10" y="45" rx="2" />
-            <rect class="line bottom" width="80" height="10" x="10" y="65" rx="2" />
-        </svg>
-    </div>
-    
+    <a
+      href="https://api.whatsapp.com/send/?phone=7727273403&text=Hola%20los%20contacto%20desde%20el%20sitio%20oficial%20de%20Hulux%20Telecomunicaciones,%20estoy%20interesado%20en%20contratar%20su%20servicio"
+      class="py-2 px-5 rounded-sm bg-tertiary hover:bg-secondary text-secondary hover:text-tertiary"
+    >
+      Contratar
+    </a>
+  </nav>
+
+  <div class="menu-toggle block md:hidden" id="button">
+    <svg viewBox="0 0 100 100" width="32" height="32">
+      <rect class="line top" width="80" height="10" x="10" y="25" rx="2" />
+      <rect class="line middle" width="80" height="10" x="10" y="45" rx="2" />
+      <rect class="line bottom" width="80" height="10" x="10" y="65" rx="2" />
+    </svg>
+  </div>
 </header>
+
 <style>
-    .bg-solid{
-        background-color: var(--color-secondary);
-    }
-    .menu-toggle {
-        cursor: pointer;
-        transition: 0.3s ease;
-    }
+  .bg-solid {
+    background-color: var(--color-secondary);
+  }
 
-    .line {
-        fill: var(--color-tertiary);
-        transition: all 0.3s ease;
-        transform-origin: center;
-    }
+  .menu-toggle {
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
 
-    /* ANIMACIÓN AL ABRIR */
-    .menu-toggle.open .top {
-        transform: rotate(45deg) translate(10px, 10px);
-    }
+  .line {
+    fill: var(--color-tertiary);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
 
-    .menu-toggle.open .middle {
-        opacity: 0;
-    }
+  .menu-toggle.open .top {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
 
-    .menu-toggle.open .bottom {
-        transform: rotate(-45deg) translate(10px, -10px);
-    }
+  .menu-toggle.open .middle {
+    opacity: 0;
+  }
 
+  .menu-toggle.open .bottom {
+    transform: rotate(-45deg) translate(10px, -10px);
+  }
 </style>
+
 <script>
-    //Cambio de color en el header al hacer scroll
-    const header = document.getElementsByTagName("header")[0];
-    
-    if(!header.classList.contains("solid")){
-        const scrollDistance = 80;
-        if(scrollY > scrollDistance){
-            header.classList.add("bg-solid");
-        }
-        else header.classList.remove("bg-solid");
-        
-        window.addEventListener("scroll", ()=>{
-            if(scrollY > scrollDistance){
-                header.classList.add("bg-solid");
-            }else{
-                header.classList.remove("bg-solid");
-            }
-        });
-    }else{
-        header.classList.add("bg-solid")
-    }
+  // Cambio de color en el header al hacer scroll
+  const header = document.getElementsByTagName("header")[0];
+  const scrollDistance = 80;
+
+  if (!header.classList.contains("solid")) {
+    const toggleHeaderBg = () => {
+      if (scrollY > scrollDistance) {
+        header.classList.add("bg-solid");
+      } else {
+        header.classList.remove("bg-solid");
+      }
+    };
+
+    toggleHeaderBg();
+    window.addEventListener("scroll", toggleHeaderBg);
+  } else {
+    header.classList.add("bg-solid");
+  }
 </script>
 
 <script>
-    //Botón menú
-    const button = document.getElementById("button");
-    const menu = document.getElementById("mobileMenu");
-    const logo = document.getElementById("logo");
+  // Botón menú
+  const button = document.getElementById("button");
+  const menu = document.getElementById("mobileMenu");
+  const logo = document.getElementById("logo");
 
-    function toggleMenu() {
-        button?.classList.toggle("open");
-        menu?.classList.toggle("translate-x-full");
-        menu?.classList.toggle("translate-x-0");
-        menu?.classList.toggle("pointer-events-none");
-        logo?.classList.toggle("opacity-0");
-    }
+  function toggleMenu() {
+    button?.classList.toggle("open");
+    menu?.classList.toggle("translate-x-full");
+    menu?.classList.toggle("translate-x-0");
+    menu?.classList.toggle("pointer-events-none");
+    logo?.classList.toggle("opacity-0");
+  }
 
-    button?.addEventListener("click", toggleMenu);
+  button?.addEventListener("click", toggleMenu);
 </script>
