@@ -15,7 +15,7 @@ const solid = solidPaths.includes(normalizedPath);
 console.log(path,solid);
 ---
 
-<html lang="es" class="overscroll-none">
+<html lang="es" class="overscroll-none scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -27,8 +27,6 @@ console.log(path,solid);
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
 	</head>
 	<body>
-
-		<div id="top" class="hidden"></div>
         <Header solid={solid}></Header>
         <slot />
 		<SubMenu />

@@ -18,7 +18,7 @@ const normalizedPath = (!path.endsWith("/") && path !== "/") ? `${path}/` : path
 >
   <Logo classList="transition-opacity duration-200" />
 
-  <nav class="hidden md:flex gap-5 text-white text-lg items-center">
+  <nav class="hidden lg:flex gap-5 text-white text-lg items-center">
     <a
       href="/"
       class:list={[
@@ -67,7 +67,7 @@ const normalizedPath = (!path.endsWith("/") && path !== "/") ? `${path}/` : path
     </a>
   </nav>
 
-  <div class="menu-toggle block md:hidden" id="button">
+  <div class="menu-toggle block lg:hidden" id="button">
     <svg viewBox="0 0 100 100" width="32" height="32">
       <rect class="line top" width="80" height="10" x="10" y="25" rx="2" />
       <rect class="line middle" width="80" height="10" x="10" y="45" rx="2" />

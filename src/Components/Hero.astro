@@ -7,14 +7,14 @@ interface Props {
   subtitle: string;
   showSlot?: boolean;
   year?: boolean;
+  linktTo?: string;
 }
 
-let { center = false, bgImage, title, subtitle, showSlot=false, year = false } = Astro.props;
+let { center = false, bgImage, title, subtitle, showSlot=false, year = false, linktTo="" } = Astro.props;
 ---
 <div
-  id="top"
   class:list={[
-  "hero h-[80vh] lg:h-[85vh] max-h-[780px] relative text-white",
+  "hero h-dvh relative text-white landscape:py-64",
   !center && "px-6 sm:px-9 lg:px-16"
   ]}
   style={`background-image: url(${bgImage?.src || "/server.gif"})`}
@@ -42,7 +42,7 @@ let { center = false, bgImage, title, subtitle, showSlot=false, year = false } =
       showSlot &&  <slot />
     }
   </div>
-  <div class="absolute bottom-2 left-1/2 text-tertiary">
+  <a href={`#${linktTo}`} class="absolute bottom-8 left-1/2 text-tertiary animate-pulse cursor-pointer">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -57,7 +57,7 @@ let { center = false, bgImage, title, subtitle, showSlot=false, year = false } =
       <path d="M6 9l6 6l6 -6" />
     </svg>
 
-  </div>
+  </a>
 </div>
 
 <style>
