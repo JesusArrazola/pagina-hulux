@@ -3,23 +3,67 @@ import Layout from "../Layouts/Layout.astro";
 ---
 
 <Layout>
-    <section class="mt-18 bg-secondary flex flex-col text-white items-center justify-center p-8">
-        <p class="text-white"> Eliminar mis datos de usuario </p>
-        <br>
-        <form>
-            <input class="border border-white p-2 rounded-md" type="text" name="cel" id="0" placeholder="Número de teléfono" maxlength="10">
-            <br><br>
-            <input class="border border-white p-2 rounded-md" type="password" name="cel" id="0" placeholder="Contraseña">
-        </form>
-        <br><br>
-        <p class="text-tertiary">
-            Deseo que mis datos sean eliminados del sistema
-        </p>
-        <br>
-        <br>
-        <button id="btttn" class="bg-primary text-white py-3 px-6 rounded-md cursor-pointer">Eliminar datos</button>
-    </section>
+  <div class="text-white">
+    <div class="mt-26 w-full mx-auto bg-gray-800 p-8 shadow-lg">
+  <h1 class="text-2xl font-bold mb-6 text-center">Solicitud de Eliminación de Datos Personales</h1>
+
+  <p class="mb-4 text-sm text-gray-300">
+    Si deseas eliminar tu cuenta y los datos personales asociados a cualquiera de nuestras aplicaciones, por favor completa el siguiente formulario. 
+    <br><br>
+    <span class="text-white font-medium">Instrucciones:</span>
+    <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+      <li>Selecciona la aplicación correspondiente.</li>
+      <li>Ingresa tu nombre y correo electrónico registrado.</li>
+      <li>Incluye cualquier información adicional que nos ayude a localizar tu cuenta (opcional).</li>
+      <li>Haz clic en "Solicitar Eliminación".</li>
+    </ul>
+    <br>
+    Una vez recibida tu solicitud, procesaremos la eliminación de tus datos en un plazo máximo de <span class="text-white font-semibold">72 horas hábiles</span>.
+  </p>
+
+  <form class="space-y-4 mt-6">
+    <!-- Dropdown de apps -->
+    <div>
+      <label for="app" class="block mb-1 text-sm font-medium">Selecciona la aplicación</label>
+      <select id="app" name="app" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white focus:ring-blue-500 focus:border-blue-500">
+        <option value="">-- Selecciona una opción --</option>
+        <option value="super-abasto-dulcero">Super Abasto Dulcero</option>
+        <option value="hulux-connect">Hulux Connect</option>
+        <option value="asepta">ASEPTA</option>
+        <option value="xica-gym-center">XICA GYM CENTER</option>
+      </select>
+    </div>
+
+    <!-- Nombre -->
+    <div>
+      <label for="nombre" class="block mb-1 text-sm font-medium">Tu nombre</label>
+      <input type="text" id="nombre" name="nombre" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white focus:ring-blue-500 focus:border-blue-500">
+    </div>
+
+    <!-- Correo -->
+    <div>
+      <label for="correo" class="block mb-1 text-sm font-medium">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white focus:ring-blue-500 focus:border-blue-500">
+    </div>
+
+    <!-- Mensaje -->
+    <div>
+      <label for="mensaje" class="block mb-1 text-sm font-medium">Mensaje adicional (opcional)</label>
+      <textarea id="mensaje" name="mensaje" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Ej. Quiero eliminar todos los datos vinculados a mi cuenta..."></textarea>
+    </div>
+
+    <!-- Botón de enviar -->
+    <div class="text-center" id="btttn">
+      <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition">
+        Solicitar Eliminación
+      </button>
+    </div>
+  </form>
+</div>
+  </div>
+
 </Layout>
+
 <script>
     const btn = document.querySelector("#btttn");
     function alertar(){
