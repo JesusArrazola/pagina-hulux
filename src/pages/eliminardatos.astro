@@ -24,16 +24,30 @@ import Layout from "../Layouts/Layout.astro";
 
   <form class="space-y-4 mt-6">
     <!-- Dropdown de apps -->
-    <div>
-      <label for="app" class="block mb-1 text-sm font-medium">Selecciona la aplicación</label>
-      <select id="app" name="app" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2 text-white focus:ring-blue-500 focus:border-blue-500">
-        <option value="">-- Selecciona una opción --</option>
-        <option value="super-abasto-dulcero">Super Abasto Dulcero</option>
-        <option value="hulux-connect">Hulux Connect</option>
-        <option value="asepta">ASEPTA</option>
-        <option value="xica-gym-center">XICA GYM CENTER</option>
-      </select>
-    </div>
+    <!-- Antes: Dropdown de apps -->
+<!-- Después: Checkboxes de apps -->
+<div>
+  <p class="block mb-1 text-sm font-medium">Selecciona la(s) aplicación(es)</p>
+  <div class="flex flex-col gap-2 text-sm text-gray-300">
+    <label class="flex items-center gap-2">
+      <input type="checkbox" name="apps" value="super-abasto-dulcero" class="accent-blue-500">
+      Abasto Dulcero
+    </label>
+    <label class="flex items-center gap-2">
+      <input type="checkbox" name="apps" value="hulux-connect" class="accent-blue-500">
+      Hulux Connect
+    </label>
+    <label class="flex items-center gap-2">
+      <input type="checkbox" name="apps" value="asepta" class="accent-blue-500">
+      ASEPTA
+    </label>
+    <label class="flex items-center gap-2">
+      <input type="checkbox" name="apps" value="xica-gym-center" class="accent-blue-500">
+      XICA GYM CENTER
+    </label>
+  </div>
+</div>
+
 
     <!-- Nombre -->
     <div>
