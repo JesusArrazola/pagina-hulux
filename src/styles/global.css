@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@midudev/tailwind-animations";
+@plugin "@tailwindcss/typography";
 
 /* 💡 Soft Blink Animation */
 @layer utilities {

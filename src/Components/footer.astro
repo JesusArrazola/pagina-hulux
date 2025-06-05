@@ -11,8 +11,9 @@ import WhatsAppIcon from "../assets/icons/whatsappIcon.svg"
 import Padding from "./Utilidades/Padding.astro";
 import LogoApify from "./LogoApify.astro";
 
-const path = Astro.url.pathname;
-const showApify = (path == "/eliminardatos/") || (path == "/eliminardatos");
+let path = Astro.url.pathname;
+path += "/"
+const showApify = (path == "/eliminardatos/") || (path == "/avisoprivacidad-appify/");
 ---
 
 <Padding bg>
