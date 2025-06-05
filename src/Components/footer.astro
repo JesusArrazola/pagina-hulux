@@ -9,14 +9,18 @@ import Envelope from "../assets/icons/envelope.svg";
 import Phone from "../assets/icons/phone.svg"
 import WhatsAppIcon from "../assets/icons/whatsappIcon.svg"
 import Padding from "./Utilidades/Padding.astro";
+import LogoApify from "./LogoApify.astro";
 
 const path = Astro.url.pathname;
+const showApify = (path == "/eliminardatos/") || (path == "/eliminardatos");
 ---
 
 <Padding bg>
     <footer class="flex flex-col items-start justify-start gap-20 py-9 xl:py-16 bg-secondary">
-        <Logo/>
-    
+        {
+            showApify? <LogoApify/> : <Logo/>
+
+        }
         <section class="flex flex-col gap-16 sm:gap-32 lg:gap-48 sm:flex-row border-t-1 border-white/30 pt-8 w-full">
             
             <div class="flex flex-col gap-8">
