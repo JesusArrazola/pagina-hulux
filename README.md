@@ -1,7 +1,7 @@
 
-# 🌌 Proyecto Web con Astro
+# 🌌 Documentación sitio web Hulux Telecom.
 
-Este proyecto utiliza [Astro](https://astro.build/) para construir una página web moderna, rápida y optimizada. A continuación encontrarás instrucciones para instalar, modificar y compilar el proyecto.
+Este proyecto utiliza [Astro](https://astro.build/) para construir la página oficial de __Hulux Telecomunicaciones__. En esta guía se detalla como instalar el proyecto, modificar el código, compilar y desplegar el sitio web.
 
 ## 🚀 Requisitos
 
@@ -48,7 +48,7 @@ npm install
     
 -   Los componentes reutilizables están en `src/components/`.
     
--   Los estilos globales pueden colocarse en `src/styles/`.
+-   Los estilos globales pueden colocarse en `src/styles/`. __NOTA:__ Este proyecto utiliza Tailwind para los estilos CSS. Conoce más de Tailwind en la [Documentación (en inglés)](https://tailwindcss.com/docs/installation/using-vite). Sin embargo, también puedes usar CSS tradicional si así lo deseas.
     
 
 Puedes modificar cualquier archivo en `src/` y Astro recargará automáticamente la página si usas el servidor de desarrollo.
@@ -107,9 +107,7 @@ Para desplegar la página web en el servidor hay que copiar el contenido de la c
 
 -   [Documentación oficial de Astro](https://docs.astro.build/)
     
--   [Guía de componentes](https://docs.astro.build/en/core-concepts/components/)
-    
--   [Integraciones](https://docs.astro.build/en/guides/integrations-guide/)
+-   [Guía de componentes](https://docs.astro.build/es/basics/astro-components/)
     
 
 ----------
